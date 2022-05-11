@@ -187,7 +187,7 @@ html;
 html;
                         if ($value['status'] == 2 || $porcentaje >= 80) {
                             $card_cursos .= <<<html
-                            <div class="ms-3 me-3 msg-encuesta px-2 py-1">Se ha habilitado una encuesta para este curso</div><br><br>
+                            <div class="ms-3 me-3 msg-encuesta px-2 py-1">Se ha habilitado un examen para este taller</div><br><br>
 html;
                         }
         

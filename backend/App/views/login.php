@@ -120,7 +120,7 @@ echo $header;
                         <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                             <div class="card card-plain mt-7">
                                 <div class="card-header pb-0 text-start">
-                                    <h5 class="font-weight-bolder text-info text-dark text-center">XXXI Congreso Anual de la Sociedad Mexicana de Neurología Pediátrica 2022</h5>
+                                    <h5 class="font-weight-bolder text-info text-dark text-center">Taller para padres de la Sociedad Mexicana de Neurología Pediátrica 2022</h5>
                                     <div id="counter" class="group text-center mt-4">
                                         <!-- <span><em>days</em></span> 
                                         <span><em>hours</em></span>
@@ -177,16 +177,21 @@ echo $header;
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div id="particles-js" class="oblique position-absolute top-0 h-100 d-md-block d-none me-n9">
+
+                            <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n9">
+                                
                                 <!-- <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('/assets/img/curved-images/curved9.jpg')"></div>-->
-                                <!-- <video autoplay muted loop>
-                                    <source class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/curved-images/Musa_Web.mp4" type="video/mp4">
-                                </video> -->
+                                <video autoplay muted loop>
+                                    <source class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/curved-images/FONDOWEB-SMNP-10FEB.mp4" type="video/mp4">
+                                </video>
+
                             </div>
-                            <div class="count-particles" hidden>
+
+                            <!--<div class="count-particles" hidden>
                                 <span class="js-count-particles">--</span> particles
                             </div>
-                            <div ></div>
+                            <div ></div>-->
+
                         </div>
                     </div>
                 </div>

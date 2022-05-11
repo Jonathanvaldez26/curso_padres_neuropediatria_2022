@@ -130,7 +130,7 @@
                                 </div>
 
                                 <div class="col-12 col-lg-4">
-                                    <label class="form-label">Apellido paterno *</label>
+                                    <label class="form-label">Apellido materno *</label>
                                     <div class="input-group">
                                         <input id="apellido_materno" name="apellido_materno" maxlength="29" pattern="[a-zA-Z ÑñáÁéÉíÍóÚ]*" class="form-control" type="text" placeholder="Thompson" required="required" onfocus="focused(this)" onfocusout="defocused(this)" value="<?= $userData['apellidom'] ?>" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                                     </div>

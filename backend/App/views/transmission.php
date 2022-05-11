@@ -1,10 +1,10 @@
 <title>
-    Transmisión 
+    Transmisión
 </title>
 <?php echo $header; ?>
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
-    
+
     <nav class="navbar navbar-main navbar-expand-lg position-sticky mt-4 top-1 px-0 mx-4 shadow-none border-radius-xl z-index-sticky" id="navbarBlur" data-scroll="true">
         <div class="container-fluid py-1 px-3">
             <nav aria-label="breadcrumb">
@@ -59,57 +59,57 @@
 
 
     <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-12">
-          <div class="card card-body" id="profile">
-            <div class="row justify-content-center align-items-center">
-              <div class="col-sm-auto col-4">
-                <div class="avatar avatar-xl position-relative">
-                  <img src="/assets/img/Logo_SMNP.png">
-                </div>
-              </div>
-              <div class="col-sm-auto col-8 my-auto">
-                <div class="h-100">
-                    <h5 class="mb-1 font-weight-bolder" id="nombre_transmision">
-                        <?php echo $transmision_1['nombre'];?>
-                    </h5>
-                  
-                    <input type="text" id="nombre_t1" value="<?php echo $transmision_1['nombre'];?>" readonly hidden>
-                    <input type="text" id="nombre_t2" value="<?php echo $transmision_2['nombre'];?>" readonly hidden>
-                  <p class="mb-0 font-weight-bold text-sm">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-body" id="profile">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-sm-auto col-4">
+                            <div class="avatar avatar-xl position-relative">
+                                <img src="/assets/img/Logo_SMNP.png">
+                            </div>
+                        </div>
+                        <div class="col-sm-auto col-8 my-auto">
+                            <div class="h-100">
+                                <h5 class="mb-1 font-weight-bolder" id="nombre_transmision">
+                                    <?php echo $transmision_1['nombre']; ?>
+                                </h5>
 
-                  </p>
-                </div>
-              </div>
-              
-              <div class="col-sm-auto ms-sm-auto mt-sm-0 mt-3 d-flex">
-                <div class="form-check form-switch ms-2">
-                    <div class="row text-center">
-                        <div class="col-lg-12 col-md-12 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
-                            <div class="nav-wrapper position-relative end-0">
-                                <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
-                                    <li class="nav-item transmisiones px-3" data-transmision="1">
-                                        <a class="nav-link mb-0 px-0 py-1 active" href="#transmision_1" data-bs-toggle="tab" role="tab" aria-selected="true">
-                                            <span class="fa fa-video"></span>
-                                            <span class="ms-1">Transmisión 1</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item transmisiones px-3" data-transmision="2">
-                                        <a class="nav-link mb-0 px-0 py-1" href="#transmision_2" data-bs-toggle="tab" role="tab" aria-selected="false">
-                                            <span class="fas fa-camera"></span>
-                                            <span class="ms-1">Transmisión 2</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <input type="text" id="nombre_t1" value="<?php echo $transmision_1['nombre']; ?>" readonly hidden>
+                                <input type="text" id="nombre_t2" value="<?php echo $transmision_2['nombre']; ?>" readonly hidden>
+                                <p class="mb-0 font-weight-bold text-sm">
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-auto ms-sm-auto mt-sm-0 mt-3 d-flex">
+                            <div class="form-check form-switch ms-2">
+                                <div class="row text-center">
+                                    <div class="col-lg-12 col-md-12 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+                                        <div class="nav-wrapper position-relative end-0">
+                                            <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
+                                                <li class="nav-item transmisiones px-3" data-transmision="1">
+                                                    <a class="nav-link mb-0 px-0 py-1 active" href="#transmision_1" data-bs-toggle="tab" role="tab" aria-selected="true">
+                                                        <span class="fa fa-video"></span>
+                                                        <span class="ms-1">Transmisión 1</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item transmisiones px-3" data-transmision="2">
+                                                    <a class="nav-link mb-0 px-0 py-1" href="#transmision_2" data-bs-toggle="tab" role="tab" aria-selected="false">
+                                                        <span class="fas fa-camera"></span>
+                                                        <span class="ms-1">Transmisión 2</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
 
         <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show position-relative active height-350 border-radius-lg" id="transmision_1" role="tabpanel" aria-labelledby="transmision_1">
@@ -119,20 +119,20 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12 col-md-12 m-auto text-center">
-                            <!-- <img alt="Image placeholder" style="width: 100%" src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2100&q=80" class="img-fluid border-radius-lg shadow-lg"> -->
-                                        <input type="text" readonly hidden id="secs_t1" value="<?php echo $secs_t1['segundos'];?>">
-                                        <input type="text" readonly hidden id="status_t1" value="<?php echo $transmision_1['status'];?>">
-                                        <input type="text" readonly hidden id="duracion_t1" value="<?php echo $transmision_1['duracion'];?>">
-                                        <span type="text" name="time_watch_1" id="time_watch_1" ></span>
+                                        <!-- <img alt="Image placeholder" style="width: 100%" src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2100&q=80" class="img-fluid border-radius-lg shadow-lg"> -->
+                                        <input type="text" readonly hidden id="secs_t1" value="<?php echo $secs_t1['segundos']; ?>">
+                                        <input type="text" readonly hidden id="status_t1" value="<?php echo $transmision_1['status']; ?>">
+                                        <input type="text" readonly hidden id="duracion_t1" value="<?php echo $transmision_1['duracion']; ?>">
+                                        <span type="text" name="time_watch_1" id="time_watch_1"></span>
                                         <section id="iframe_1_section">
-                                            <iframe class="frame-transmision" src="<?php echo $transmision_1['url'];?>" frameborder="0"></iframe>
+                                            <iframe class="frame-transmision" src="<?php echo $transmision_1['url']; ?>" frameborder="0"></iframe>
                                         </section>
-                                
+
                                         <img id="img-stanby-1" class="frame-transmision" hidden src="/assets/img/stand_by.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="row align-items-center px-2 mt-4 mb-2">
-                                    <div class="col-sm-6">
+                                    <!-- <div class="col-sm-6">
                                         <div class="d-flex">
                                             <div class="d-flex align-items-center">
                                                 <i class="ni ni-like-2 me-1 cursor-pointer"></i>
@@ -143,600 +143,275 @@
                                                 <span class="text-sm me-3">36</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <hr class="horizontal dark my-3">
                                 </div>
-                        <!-- Comments -->
-                        <div class="mb-1">
-                            <div class="d-flex">
-                            <div class="flex-shrink-0">
-                                <img alt="Image placeholder" class="avatar rounded-circle" src="../../../assets/img/team-4.jpg">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="h5 mt-0">Dr. Michael Lewis</h6>
-                                <p class="text-sm">Muy Interesante, felicitaciones.</p>
-                                <div class="d-flex">
-                                <div>
-                                    <i class="ni ni-like-2 me-1 cursor-pointer"></i>
-                                </div>
-                                <span class="text-sm me-2">3 likes</span>
+                                <!-- Comments -->
+                                <div class="mb-1">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img alt="Image placeholder" class="avatar rounded-circle" src="../../../assets/img/team-4.jpg">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="h5 mt-0">Dr. Michael Lewis</h6>
+                                            <p class="text-sm">Muy Interesante, felicitaciones.</p>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <i class="ni ni-like-2 me-1 cursor-pointer"></i>
+                                                </div>
+                                                <span class="text-sm me-2">3 likes</span>
 
-                                </div>
-                            </div>
-                            </div>
-                            <div class="d-flex mt-3">
-                            <div class="flex-shrink-0">
-                                <img alt="Image placeholder" class="avatar rounded-circle" src="../../../assets/img/team-5.jpg">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="h5 mt-0">Dra. Jessica Stones</h6>
-                                <p class="text-sm">Muy buena presentación.</p>
-                                <div class="d-flex">
-                                <div>
-                                    <i class="ni ni-like-2 me-1 cursor-pointer"></i>
-                                </div>
-                                <span class="text-sm me-2">10 likes</span>
-
-                                </div>
-                            </div>
-                            </div>
-                            <div class="d-flex mt-4">
-                            <div class="flex-shrink-0">
-                                <img alt="Image placeholder" class="avatar rounded-circle me-3" src="../../../assets/img/bruce-mars.jpg">
-                            </div>
-                            <div class="flex-grow-1 my-auto">
-                                <form class="align-items-center">
-                                <div class="d-flex">
-                                    <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Escribe un comentario para todos los asistentes." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <button class="btn bg-gradient-primary mb-0 ms-2">
-                                    <i class="ni ni-send"></i>
-                                    </button>
-                                </div>
-                                </form>
+                                    <div class="d-flex mt-3">
+                                        <div class="flex-shrink-0">
+                                            <img alt="Image placeholder" class="avatar rounded-circle" src="../../../assets/img/team-5.jpg">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="h5 mt-0">Dra. Jessica Stones</h6>
+                                            <p class="text-sm">Muy buena presentación.</p>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <i class="ni ni-like-2 me-1 cursor-pointer"></i>
+                                                </div>
+                                                <span class="text-sm me-2">10 likes</span>
 
-                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mt-4">
+                                        <div class="flex-shrink-0">
+                                            <img alt="Image placeholder" class="avatar rounded-circle me-3" src="../../../assets/img/bruce-mars.jpg">
+                                        </div>
+                                        <div class="flex-grow-1 my-auto">
+                                            <form class="align-items-center">
+                                                <div class="d-flex">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="Escribe un comentario para todos los asistentes." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
+                                                    </div>
+                                                    <button class="btn bg-gradient-primary mb-0 ms-2">
+                                                        <i class="ni ni-send"></i>
+                                                    </button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                    </div>
                     </div>
                     <div class="col-11 col-lg-4">
-                    <div class="card">
-                        <div class="card blur shadow-blur max-height-vh-70">
-                        <div class="card-header shadow-lg">
-                            <div class="row">
-                            <div class="col-md-10">
-                                <div class="d-flex align-items-center">
-                                <img alt="Image" src="../../../img/users_musa/<?php echo $info_user['avatar_img'];?>" class="avatar">
-                                <div class="ms-3">
-                                    <h6 class="mb-0 d-block"><?php echo $info_user['prefijo'].' '.$info_user['nombre'];?></h6>
-                                    <span class="text-sm text-dark opacity-8">Tus Preguntas al Ponente</span>
-                                </div>
-                                </div>
-                            </div>
 
-                            <div class="col-1 my-auto ps-0">
-                                <div class="dropdown">
-                                <button class="btn btn-icon-only shadow-none text-dark mb-0" type="button" data-bs-toggle="dropdown">
-                                    <i class="ni ni-settings"></i>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end me-sm-n2 p-2" aria-labelledby="chatmsg">
-                                    <li>
-                                    <a class="dropdown-item border-radius-md" href="javascript:;">
-                                        Profile
-                                    </a>
-                                    </li>
-                                    <li>
-                                    <a class="dropdown-item border-radius-md" href="javascript:;">
-                                        Mute conversation
-                                    </a>
-                                    </li>
-                                    <li>
-                                    <a class="dropdown-item border-radius-md" href="javascript:;">
-                                        Block
-                                    </a>
-                                    </li>
-                                    <li>
-                                    <a class="dropdown-item border-radius-md" href="javascript:;">
-                                        Clear chat
-                                    </a>
-                                    </li>
-                                    <li>
-                                    <hr class="dropdown-divider">
-                                    </li>
-                                    <li>
-                                    <a class="dropdown-item border-radius-md text-danger" href="javascript:;">
-                                        Delete chat
-                                    </a>
-                                    </li>
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="card-body overflow-auto overflow-x-hidden">
-                            <div class="row justify-content-start mb-4">
-                            <div class="col-auto">
-                                <div class="card ">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-1">
-                                    ¿Dr. Puede responder que beneficios tiene el punto A? Por favor
+                        <div class="card">
+                            <div class="card blur shadow-blur max-height-vh-70">
+                                <div class="card-header shadow-lg">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="d-flex align-items-center">
+                                                <!--img alt="Image" src="assets/img/bruce-mars.jpg" class="avatar"-->
+                                                <div class="ms-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <img alt="Image" src="../../../img/users_musa/<?php echo $info_user['avatar_img']; ?>" class="avatar">
+                                                        <div class="ms-3">
+                                                            <h6 class="mb-0 d-block"><?php echo $info_user['prefijo'] . ' ' . $info_user['nombre']; ?></h6>
+                                                            <span class="text-sm text-dark opacity-8">Tus Preguntas al Ponente</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    </p>
-                                    <div class="d-flex align-items-center text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>3:14 pm</small>
                                     </div>
                                 </div>
+
+                                <div class="card-footer d-block">
+                                    <form class="align-items-center" id="form-pregunta" autocomplete="nope" action="" method="POST" onsubmit="return false;" accept-charset="utf-8">
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <input type="text" name="pregunta" id="pregunta" class="form-control" placeholder="Escribe tu pregunta al ponente aquí." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
+                                            </div>
+
+                                            <div class="input-group" style="display: none;">
+                                                <input class="form-control" style="visibility: hidden" type="hidden" name="registrado" id="registrado" value="90323" onfocus="focused(this)" onfocusout="defocused(this)">
+
+                                            </div>
+
+
+                                            <button class="btn bg-gradient-success mb-0 ms-2" id="btn-enviar">
+                                                <i class="ni ni-send"></i>
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-end text-right mb-4">
-                            <div class="col-auto">
-                                <div class="card bg-gray-200">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-1">
-                                    ¿Son consecutivos los conceptos?<br>
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:42pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row mt-4">
-                            <div class="col-md-12 text-center">
-                                <span class="badge text-dark">Wed, 3:27pm</span>
-                            </div>
-                            </div>
-                            <div class="row justify-content-start mb-4">
-                            <div class="col-auto">
-                                <div class="card ">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-1">
-                                    Yeah! Responsive Design is geared towards those trying to build web apps
-                                    </p>
-                                    <div class="d-flex align-items-center text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:31pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-end text-right mb-4">
-                            <div class="col-auto">
-                                <div class="card bg-gray-200">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-1">
-                                    Excellent, I want it now !
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:42pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-start mb-4">
-                            <div class="col-auto">
-                                <div class="card ">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-1">
-                                    You can easily get it; The content here is all free
-                                    </p>
-                                    <div class="d-flex align-items-center text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:42pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-end text-right mb-4">
-                            <div class="col-auto">
-                                <div class="card bg-gray-200">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-1">
-                                    Awesome, blog is important source material for anyone who creates apps? <br>
-                                    Beacuse these blogs offer a lot of information about website development.
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:42pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-start mb-4">
-                            <div class="col-5">
-                                <div class="card ">
-                                <div class="card-body p-2">
-                                    <div class="col-12 p-0">
-                                    <img src="https://images.unsplash.com/photo-1602142946018-34606aa83259?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1762&amp;q=80" alt="Rounded image" class="img-fluid mb-2 border-radius-lg">
-                                        
-                                    </div>
-                                    <div class="d-flex align-items-center text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:47pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-end text-right mb-4">
-                            <div class="col-auto">
-                                <div class="card bg-gray-200">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-0">
-                                    At the end of the day … the native dev apps is where users are
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:42pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-start">
-                            <div class="col-auto">
-                                <div class="card ">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-0">
-                                    Charlie is Typing...
-                                    </p>
-                                </div>
-                                </div>
-                            </div>
                             </div>
                         </div>
-                        <div class="card-footer d-block">
-                            <form class="align-items-center">
-                            <div class="d-flex">
-                                <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Escribe tu pregunta al ponente aquí." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
-                                </div>
-                                <button class="btn bg-gradient-primary mb-0 ms-2">
-                                <i class="ni ni-send"></i>
-                                </button>
-                            </div>
-                            </form>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
 
             <div class="tab-pane fade position-relative height-350 border-radius-lg" id="transmision_2" role="tabpanel" aria-labelledby="transmision_2">
                 <div class="row mt-4">
-                        <div class="col-10 col-lg-8">
+                    <div class="col-10 col-lg-8">
                         <div class="card">
                             <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 col-md-12 m-auto text-center">
-                                <!-- <img alt="Image placeholder" style="width: 100%" src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2100&q=80" class="img-fluid border-radius-lg shadow-lg"> -->
-                                    <input type="text" readonly hidden id="secs_t2" value="<?php echo $secs_t2['segundos'];?>">
-                                    <input type="text" readonly hidden id="status_t2" value="<?php echo $transmision_2['status'];?>">
-                                    <input type="text" readonly hidden id="duracion_t2" value="<?php echo $transmision_2['duracion'];?>">
-                                    <span type="text" name="time_watch_2" id="time_watch_2" ></span>
-                                    <section id="iframe_2_section">
-                                        <iframe class="frame-transmision" src="<?php echo $transmision_2['url'];?>" frameborder="0"></iframe>
-                                    </section>
-                                    
-                                    <img id="img-stanby-2" class="frame-transmision" hidden src="/assets/img/stand_by.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="row align-items-center px-2 mt-4 mb-2">
-                                <div class="col-sm-6">
-                                <div class="d-flex">
-                                    <div class="d-flex align-items-center">
-                                    <i class="ni ni-like-2 me-1 cursor-pointer"></i>
-                                    <span class="text-sm me-3 ">150</span>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                    <i class="ni ni-chat-round me-1 cursor-pointer"></i>
-                                    <span class="text-sm me-3">36</span>
-                                    </div>
-                                </div>
-                                </div>
-
-                                <hr class="horizontal dark my-3">
-                            </div>
-                            <!-- Comments -->
-                            <div class="mb-1">
-                                <div class="d-flex">
-                                <div class="flex-shrink-0">
-                                    <img alt="Image placeholder" class="avatar rounded-circle" src="../../../assets/img/team-4.jpg">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h6 class="h5 mt-0">Dr. Michael Lewis</h6>
-                                    <p class="text-sm">Muy Interesante, felicitaciones.</p>
-                                    <div class="d-flex">
-                                    <div>
-                                        <i class="ni ni-like-2 me-1 cursor-pointer"></i>
-                                    </div>
-                                    <span class="text-sm me-2">3 likes</span>
-
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="d-flex mt-3">
-                                <div class="flex-shrink-0">
-                                    <img alt="Image placeholder" class="avatar rounded-circle" src="../../../assets/img/team-5.jpg">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h6 class="h5 mt-0">Dra. Jessica Stones</h6>
-                                    <p class="text-sm">Muy buena presentación.</p>
-                                    <div class="d-flex">
-                                    <div>
-                                        <i class="ni ni-like-2 me-1 cursor-pointer"></i>
-                                    </div>
-                                    <span class="text-sm me-2">10 likes</span>
-
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="d-flex mt-4">
-                                <div class="flex-shrink-0">
-                                    <img alt="Image placeholder" class="avatar rounded-circle me-3" src="../../../assets/img/bruce-mars.jpg">
-                                </div>
-                                <div class="flex-grow-1 my-auto">
-                                    <form class="align-items-center">
-                                    <div class="d-flex">
-                                        <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Escribe un comentario para todos los asistentes." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
-                                        </div>
-                                        <button class="btn bg-gradient-primary mb-0 ms-2">
-                                        <i class="ni ni-send"></i>
-                                        </button>
-                                    </div>
-                                    </form>
-
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-11 col-lg-4">
-                        <div class="card">
-                            <div class="card blur shadow-blur max-height-vh-70">
-                            <div class="card-header shadow-lg">
                                 <div class="row">
-                                <div class="col-md-10">
-                                    <div class="d-flex align-items-center">
-                                    <img alt="Image" src="../../../img/users_musa/<?php echo $info_user['avatar_img'];?>" class="avatar">
-                                    <div class="ms-3">
-                                        <h6 class="mb-0 d-block"><?php echo $info_user['prefijo'].' '.$info_user['nombre'];?></h6>
-                                        <span class="text-sm text-dark opacity-8">Tus Preguntas al Ponente</span>
-                                    </div>
-                                    </div>
-                                </div>
+                                    <div class="col-12 col-md-12 m-auto text-center">
+                                        <!-- <img alt="Image placeholder" style="width: 100%" src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2100&q=80" class="img-fluid border-radius-lg shadow-lg"> -->
+                                        <input type="text" readonly hidden id="secs_t2" value="<?php echo $secs_t2['segundos']; ?>">
+                                        <input type="text" readonly hidden id="status_t2" value="<?php echo $transmision_2['status']; ?>">
+                                        <input type="text" readonly hidden id="duracion_t2" value="<?php echo $transmision_2['duracion']; ?>">
+                                        <span type="text" name="time_watch_2" id="time_watch_2"></span>
+                                        <section id="iframe_2_section">
+                                            <iframe class="frame-transmision" src="<?php echo $transmision_2['url']; ?>" frameborder="0"></iframe>
+                                        </section>
 
-                                <div class="col-1 my-auto ps-0">
-                                    <div class="dropdown">
-                                    <button class="btn btn-icon-only shadow-none text-dark mb-0" type="button" data-bs-toggle="dropdown">
-                                        <i class="ni ni-settings"></i>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-end me-sm-n2 p-2" aria-labelledby="chatmsg">
-                                        <li>
-                                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                                            Profile
-                                        </a>
-                                        </li>
-                                        <li>
-                                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                                            Mute conversation
-                                        </a>
-                                        </li>
-                                        <li>
-                                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                                            Block
-                                        </a>
-                                        </li>
-                                        <li>
-                                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                                            Clear chat
-                                        </a>
-                                        </li>
-                                        <li>
-                                        <hr class="dropdown-divider">
-                                        </li>
-                                        <li>
-                                        <a class="dropdown-item border-radius-md text-danger" href="javascript:;">
-                                            Delete chat
-                                        </a>
-                                        </li>
-                                    </ul>
+                                        <img id="img-stanby-2" class="frame-transmision" hidden src="/assets/img/stand_by.jpg" alt="">
                                     </div>
                                 </div>
-                                </div>
-                            </div>
-                            <div class="card-body overflow-auto overflow-x-hidden">
-                                <div class="row justify-content-start mb-4">
-                                <div class="col-auto">
-                                    <div class="card ">
-                                    <div class="card-body py-2 px-3">
-                                        <p class="mb-1">
-                                        ¿Dr. Puede responder que beneficios tiene el punto A? Por favor
+                                <div class="row align-items-center px-2 mt-4 mb-2">
+                                    <!-- <div class="col-sm-6">
+                                        <div class="d-flex">
+                                            <div class="d-flex align-items-center">
+                                                <i class="ni ni-like-2 me-1 cursor-pointer"></i>
+                                                <span class="text-sm me-3 ">150</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <i class="ni ni-chat-round me-1 cursor-pointer"></i>
+                                                <span class="text-sm me-3">36</span>
+                                            </div>
+                                        </div>
+                                    </div> -->
 
-                                        </p>
-                                        <div class="d-flex align-items-center text-sm opacity-6">
-                                        <i class="ni ni-check-bold text-sm me-1"></i>
-                                        <small>3:14 pm</small>
+                                    <hr class="horizontal dark my-3">
+                                </div>
+                                <!-- Comments -->
+                                <div class="mb-1">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <img alt="Image placeholder" class="avatar rounded-circle" src="../../../assets/img/team-4.jpg">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="h5 mt-0">Dr. Michael Lewis</h6>
+                                            <p class="text-sm">Muy Interesante, felicitaciones.</p>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <i class="ni ni-like-2 me-1 cursor-pointer"></i>
+                                                </div>
+                                                <span class="text-sm me-2">3 likes</span>
+
+                                            </div>
                                         </div>
                                     </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="row justify-content-end text-right mb-4">
-                                <div class="col-auto">
-                                    <div class="card bg-gray-200">
-                                    <div class="card-body py-2 px-3">
-                                        <p class="mb-1">
-                                        ¿Son consecutivos los conceptos?<br>
-                                        </p>
-                                        <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
-                                        <i class="ni ni-check-bold text-sm me-1"></i>
-                                        <small>4:42pm</small>
+                                    <div class="d-flex mt-3">
+                                        <div class="flex-shrink-0">
+                                            <img alt="Image placeholder" class="avatar rounded-circle" src="../../../assets/img/team-5.jpg">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="h5 mt-0">Dra. Jessica Stones</h6>
+                                            <p class="text-sm">Muy buena presentación.</p>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <i class="ni ni-like-2 me-1 cursor-pointer"></i>
+                                                </div>
+                                                <span class="text-sm me-2">10 likes</span>
+
+                                            </div>
                                         </div>
                                     </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="row mt-4">
-                                <div class="col-md-12 text-center">
-                                    <span class="badge text-dark">Wed, 3:27pm</span>
-                                </div>
-                                </div>
-                                <div class="row justify-content-start mb-4">
-                                <div class="col-auto">
-                                    <div class="card ">
-                                    <div class="card-body py-2 px-3">
-                                        <p class="mb-1">
-                                        Yeah! Responsive Design is geared towards those trying to build web apps
-                                        </p>
-                                        <div class="d-flex align-items-center text-sm opacity-6">
-                                        <i class="ni ni-check-bold text-sm me-1"></i>
-                                        <small>4:31pm</small>
+                                    <div class="d-flex mt-4">
+                                        <div class="flex-shrink-0">
+                                            <img alt="Image placeholder" class="avatar rounded-circle me-3" src="../../../assets/img/bruce-mars.jpg">
+                                        </div>
+                                        <div class="flex-grow-1 my-auto">
+                                            <form class="align-items-center">
+                                                <div class="d-flex">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="Escribe un comentario para todos los asistentes." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
+                                                    </div>
+                                                    <button class="btn bg-gradient-primary mb-0 ms-2">
+                                                        <i class="ni ni-send"></i>
+                                                    </button>
+                                                </div>
+                                            </form>
+
                                         </div>
                                     </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="row justify-content-end text-right mb-4">
-                                <div class="col-auto">
-                                    <div class="card bg-gray-200">
-                                    <div class="card-body py-2 px-3">
-                                        <p class="mb-1">
-                                        Excellent, I want it now !
-                                        </p>
-                                        <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
-                                        <i class="ni ni-check-bold text-sm me-1"></i>
-                                        <small>4:42pm</small>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="row justify-content-start mb-4">
-                                <div class="col-auto">
-                                    <div class="card ">
-                                    <div class="card-body py-2 px-3">
-                                        <p class="mb-1">
-                                        You can easily get it; The content here is all free
-                                        </p>
-                                        <div class="d-flex align-items-center text-sm opacity-6">
-                                        <i class="ni ni-check-bold text-sm me-1"></i>
-                                        <small>4:42pm</small>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="row justify-content-end text-right mb-4">
-                                <div class="col-auto">
-                                    <div class="card bg-gray-200">
-                                    <div class="card-body py-2 px-3">
-                                        <p class="mb-1">
-                                        Awesome, blog is important source material for anyone who creates apps? <br>
-                                        Beacuse these blogs offer a lot of information about website development.
-                                        </p>
-                                        <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:42pm</small>
-                                    </div>
-                                </div>
                                 </div>
                             </div>
-                            </div>
-                            <div class="row justify-content-start mb-4">
-                            <div class="col-5">
-                                <div class="card ">
-                                <div class="card-body p-2">
-                                    <div class="col-12 p-0">
-                                    <img src="https://images.unsplash.com/photo-1602142946018-34606aa83259?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1762&amp;q=80" alt="Rounded image" class="img-fluid mb-2 border-radius-lg">
-                                        
-                                    </div>
-                                    <div class="d-flex align-items-center text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:47pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-end text-right mb-4">
-                            <div class="col-auto">
-                                <div class="card bg-gray-200">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-0">
-                                    At the end of the day … the native dev apps is where users are
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
-                                    <i class="ni ni-check-bold text-sm me-1"></i>
-                                    <small>4:42pm</small>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="row justify-content-start">
-                            <div class="col-auto">
-                                <div class="card ">
-                                <div class="card-body py-2 px-3">
-                                    <p class="mb-0">
-                                    Charlie is Typing...
-                                    </p>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="card-footer d-block">
-                            <form class="align-items-center">
-                            <div class="d-flex">
-                                <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Escribe tu pregunta al ponente aquí." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
-                                </div>
-                                <button class="btn bg-gradient-primary mb-0 ms-2">
-                                <i class="ni ni-send"></i>
-                                </button>
-                            </div>
-                            </form>
-                        </div>
                         </div>
                     </div>
+                    <div class="col-11 col-lg-4">
+                        <!-- aqui va el segudo -->
+                        <div class="card">
+                            <div class="card blur shadow-blur max-height-vh-70">
+                                <div class="card-header shadow-lg">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="d-flex align-items-center">
+                                                <!--img alt="Image" src="assets/img/bruce-mars.jpg" class="avatar"-->
+                                                <div class="ms-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <img alt="Image" src="../../../img/users_musa/<?php echo $info_user['avatar_img']; ?>" class="avatar">
+                                                        <div class="ms-3">
+                                                            <h6 class="mb-0 d-block"><?php echo $info_user['prefijo'] . ' ' . $info_user['nombre']; ?></h6>
+                                                            <span class="text-sm text-dark opacity-8">Tus Preguntas al Ponente</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="card-footer d-block">
+                                    <form class="align-items-center" id="form-pregunta" autocomplete="nope" action="" method="POST" onsubmit="return false;" accept-charset="utf-8">
+                                        <div class="d-flex">
+                                            <div class="input-group">
+                                                <input type="text" name="pregunta" id="pregunta" class="form-control" placeholder="Escribe tu pregunta al ponente aquí." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
+                                            </div>
+
+                                            <div class="input-group" style="display: none;">
+                                                <input class="form-control" style="visibility: hidden" type="hidden" name="registrado" id="registrado" value="90323" onfocus="focused(this)" onfocusout="defocused(this)">
+
+                                            </div>
+
+
+                                            <button class="btn bg-gradient-success mb-0 ms-2" id="btn-enviar">
+                                                <i class="ni ni-send"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                      
                     </div>
                 </div>
             </div>
-      </div>
-
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.grupolahe.com" class="font-weight-bold" target="_blank">Grupo LAHE</a>
-                for a better web.
-              </div>
-            </div>
-          </div>
         </div>
-      </footer>
+    </div>
+    </div>
+
+    <footer class="footer pt-3  ">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+                <div class="col-lg-6 mb-lg-0 mb-4">
+                    <div class="copyright text-center text-sm text-muted text-lg-start">
+                        © <script>
+                            document.write(new Date().getFullYear())
+                        </script>,
+                        made with <i class="fa fa-heart"></i> by
+                        <a href="https://www.grupolahe.com" class="font-weight-bold" target="_blank">Grupo LAHE</a>
+                        for a better web.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     </div>
 
     <?php echo $footer; ?>
@@ -744,20 +419,23 @@
 
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
 
-        function actualizarProgreso(transmision, segundos){
+        function actualizarProgreso(transmision, segundos) {
             $.ajax({
                 url: "/Transmission/updateProgress",
                 type: "POST",
-                data: {transmision, segundos},
+                data: {
+                    transmision,
+                    segundos
+                },
                 beforeSend: function() {
                     console.log("Procesando....");
                 },
                 success: function(respuesta) {
 
                     console.log(respuesta);
-                    
+
                 },
                 error: function(respuesta) {
                     console.log(respuesta);
@@ -765,18 +443,21 @@
             });
         }
 
-        function actualizarProgresoConFecha(transmision, segundos){
+        function actualizarProgresoConFecha(transmision, segundos) {
             $.ajax({
                 url: "/Transmission/updateProgressWithDate",
                 type: "POST",
-                data: {transmision, segundos},
+                data: {
+                    transmision,
+                    segundos
+                },
                 beforeSend: function() {
                     console.log("Procesando....");
                 },
                 success: function(respuesta) {
 
                     console.log(respuesta);
-                    
+
                 },
                 error: function(respuesta) {
                     console.log(respuesta);
@@ -788,26 +469,26 @@
         let status_2 = $('#status_t2').val();
 
         let tiempo_1 = $('#duracion_t1').val();
-        let duracion_1 = (parseInt(tiempo_1.substr(0, tiempo_1.indexOf(':')))*3600)+(parseInt(tiempo_1.substr(tiempo_1.length-5, 2))*60)+(parseInt(tiempo_1.substr(tiempo_1.length-2, 2)));
+        let duracion_1 = (parseInt(tiempo_1.substr(0, tiempo_1.indexOf(':'))) * 3600) + (parseInt(tiempo_1.substr(tiempo_1.length - 5, 2)) * 60) + (parseInt(tiempo_1.substr(tiempo_1.length - 2, 2)));
 
         let tiempo_2 = $('#duracion_t2').val();
-        let duracion_2 = (parseInt(tiempo_2.substr(0, tiempo_2.indexOf(':')))*3600)+(parseInt(tiempo_2.substr(tiempo_2.length-5, 2))*60)+(parseInt(tiempo_2.substr(tiempo_2.length-2, 2)));
-        
+        let duracion_2 = (parseInt(tiempo_2.substr(0, tiempo_2.indexOf(':'))) * 3600) + (parseInt(tiempo_2.substr(tiempo_2.length - 5, 2)) * 60) + (parseInt(tiempo_2.substr(tiempo_2.length - 2, 2)));
+
         // Esconder el iframe y mostrar la imagen si la transmision no está activa
         if (status_1 == 2) {
-            $('#iframe_1_section').attr('hidden',false);
-            $('#img-stanby-1').attr('hidden',true);
+            $('#iframe_1_section').attr('hidden', false);
+            $('#img-stanby-1').attr('hidden', true);
         } else {
-            $('#iframe_1_section').attr('hidden',true);
-            $('#img-stanby-1').attr('hidden',false);
+            $('#iframe_1_section').attr('hidden', true);
+            $('#img-stanby-1').attr('hidden', false);
         }
 
         if (status_2 == 2) {
-            $('#iframe_2_section').attr('hidden',false);
-            $('#img-stanby-2').attr('hidden',true);
+            $('#iframe_2_section').attr('hidden', false);
+            $('#img-stanby-2').attr('hidden', true);
         } else {
-            $('#iframe_2_section').attr('hidden',true);
-            $('#img-stanby-2').attr('hidden',false);
+            $('#iframe_2_section').attr('hidden', true);
+            $('#img-stanby-2').attr('hidden', false);
         }
 
         var intervalo;
@@ -816,14 +497,14 @@
         let transmision_actual = 1;
 
         //Variables para conteo de tiempo de transmisión 1
-        var inicio = $('#secs_t1').val()-0;
+        var inicio = $('#secs_t1').val() - 0;
         let min = 0;
         let sec = 0;
         let cut_mod_min;
         let increment = 1;
 
         //Variables para conteo de tiempo de transmisión 2
-        var inicio_2 = $('#secs_t2').val()-0;
+        var inicio_2 = $('#secs_t2').val() - 0;
         let min_2 = 0;
         let sec_2 = 0;
         let cut_mod_min_2;
@@ -851,7 +532,7 @@
             increment_2 = 0;
         }
 
-        function countTime(){
+        function countTime() {
 
             intervalo = setInterval(function() {
                 inicio += increment;
@@ -860,7 +541,7 @@
                 total_time++;
 
                 if (status_1 == 2) {
-                    if (duracion_1 >= inicio+1 && transmision_actual == 1 && ventana == 1) {
+                    if (duracion_1 >= inicio + 1 && transmision_actual == 1 && ventana == 1) {
                         increment = 1;
                         console.log(duracion_1);
                     } else {
@@ -871,7 +552,7 @@
                 }
 
                 if (status_2 == 2) {
-                    if (duracion_2 >= inicio_2+1 && transmision_actual == 2 && ventana == 1) {
+                    if (duracion_2 >= inicio_2 + 1 && transmision_actual == 2 && ventana == 1) {
                         increment_2 = 1;
                         console.log(duracion_2);
                     } else {
@@ -883,20 +564,20 @@
 
                 if ((total_time % 60) == 0) {
                     console.log('ejecutamos Ajax');
-                    
+
                     if (transmision_actual == 1) {
-                        actualizarProgresoConFecha(1,inicio);
-                        actualizarProgreso(2,inicio_2);
+                        actualizarProgresoConFecha(1, inicio);
+                        actualizarProgreso(2, inicio_2);
                     } else if (transmision_actual == 2) {
-                        actualizarProgresoConFecha(2,inicio_2);
-                        actualizarProgreso(1,inicio);
+                        actualizarProgresoConFecha(2, inicio_2);
+                        actualizarProgreso(1, inicio);
                     }
                 }
 
-                
-                
-            },1000);
-            
+
+
+            }, 1000);
+
             $(window).blur(function() {
                 ventana = 0;
                 increment = 0;
@@ -915,7 +596,7 @@
                 if (transmision_actual == 1) {
                     // Transmision 1
                     if (status_1 == 2) {
-                        if (duracion_1 >= inicio+1 && transmision_actual == 2 && ventana == 1) {
+                        if (duracion_1 >= inicio + 1 && transmision_actual == 2 && ventana == 1) {
                             increment = 1;
                         } else {
                             increment = 0;
@@ -923,11 +604,11 @@
                     } else {
                         increment = 0;
                     }
-                    
-                } else if(transmision_actual == 2 ) {
+
+                } else if (transmision_actual == 2) {
                     // Transmision 2
                     if (status_2 == 2) {
-                        if (duracion_2 >= inicio_2+1&& transmision_actual == 2 && ventana == 1) {
+                        if (duracion_2 >= inicio_2 + 1 && transmision_actual == 2 && ventana == 1) {
                             increment_2 = 1;
                         } else {
                             increment_2 = 0;
@@ -945,7 +626,7 @@
         let t1 = $('#transmision_1').html();
         let t2 = $('#transmision_2').html();
 
-        $('.transmisiones').on('click', function(){
+        $('.transmisiones').on('click', function() {
 
             let t_current = $(this).attr('data-transmision');
 
@@ -957,7 +638,7 @@
                 increment_2 = 0;
                 transmision_actual = 1;
                 if (status_1 == 2) {
-                    if (duracion_1 >= inicio+1 && transmision_actual == 2) {
+                    if (duracion_1 >= inicio + 1 && transmision_actual == 2) {
                         increment_1 = 1;
                     } else {
                         increment_1 = 0;
@@ -975,7 +656,7 @@
                 increment = 0;
                 transmision_actual = 2;
                 if (status_2 == 2) {
-                    if (duracion_2 >= inicio_2+1 && transmision_actual == 2) {
+                    if (duracion_2 >= inicio_2 + 1 && transmision_actual == 2) {
                         increment_2 = 1;
                     } else {
                         increment_2 = 0;

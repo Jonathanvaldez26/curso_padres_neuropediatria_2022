@@ -98,6 +98,14 @@
                                 <img src="/assets/img/cinta_menu.jpeg" style="border-radius: 20px; height: 38px;" alt="">
                             </div>
                         </div>
+
+
+                        <div class="card-body p-3">
+                            <div class="row mt-3">
+                                    <?php echo $card_patrocinadores; ?>
+                            </div>
+                        </div>
+                        
                         
                         <div class="card-body p-3">
                             <?php echo $programa_fecha1; ?>

@@ -86,6 +86,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row mt-0 m-auto">
             <div class="col-lg-1">
             </div>
@@ -100,11 +101,12 @@
                         </div>
 
 
-
-
-                        Aqui va la variable
+                        <!--Aqui va la variable-->
+                        
 
                         <div class="card-body p-3">
+                        <br>
+                        <p class="">Nota: Si usted desea visualizar el documento de clic sobre el nombre del trabajo libre.</p>
                             <div class="row mt-3">
                                     <?php echo $card_trabajos_libres; ?>
                             </div>
@@ -186,10 +188,129 @@
 
 </main>
 
+<!-- Modal -->
+<div class="modal fade" id="pdf" tabindex="-1" role="dialog" aria-labelledby="pdfTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Trabajo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; background: transparent;">
+          <span aria-hidden="true" style="font-size: 25px;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body cont-modal">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <script>
     $(document).ready(function(){
+
+        $('.iframe').on('click',function(){
+            var pdf = $(this).attr('data-pdf');
+            // alert(pdf);
+
+            $('.cont-modal').html('<iframe src="/trabajos_files/'+pdf+'" style="width:100%; height:700px;" frameborder="0" ></iframe>');
+        })
         
+        $('.heart-not-like').on('click', function(){
+            let clave = $(this).attr('data-clave');
+            let heart = $(this);
+
+            // if (heart.hasClass('heart-like')) {
+            //     heart.removeClass('heart-like').addClass('heart-not-like');
+            // } else {
+            //     heart.removeClass('heart-not-like').addClass('heart-like');
+            // }
+            // console.log('se cambió a like: '+clave);
+            $.ajax({
+                url: "/TrabajosLibres/Likes",
+                type: "POST",
+                data: {clave},
+                beforeSend: function() {
+                    console.log("Procesando....");
+                },
+                success: function(respuesta) {
+                    console.log(respuesta);
+                    if(respuesta == "votar"){
+                        Swal.fire(
+                            'Se registro tu voto correctamente',
+                            '',
+                            'success'
+                        )
+                        heart.removeClass('heart-not-like').addClass('heart-like');
+                    }else if(respuesta == "ya_votaste"){
+                        Swal.fire(
+                            'Ya se habia registrado tu voto',
+                            '',
+                            'info'
+                        )
+                    }else{
+                        Swal.fire(
+                            'Ya se habia registrado tu voto',
+                            '',
+                            'info'
+                        )
+                    }
+                    
+                },
+                error: function(respuesta) {
+                    console.log(respuesta);
+                }
+            });
+        })
+
+        $('.heart-like').on('click', function(){
+            let clave = $(this).attr('data-clave');
+            let heart = $(this);
+
+            // if (heart.hasClass('heart-like')) {
+            //     heart.removeClass('heart-like').addClass('heart-not-like');
+            // } else {
+            //     heart.removeClass('heart-not-like').addClass('heart-like');
+            // }
+            // console.log('se cambió a like: '+clave);
+            $.ajax({
+                url: "/TrabajosLibres/Likes",
+                type: "POST",
+                data: {clave},
+                beforeSend: function() {
+                    console.log("Procesando....");
+                },
+                success: function(respuesta) {
+                    console.log(respuesta);
+                    if(respuesta == "votar"){
+                        Swal.fire(
+                            'Se registro tu voto correctamente',
+                            '',
+                            'success'
+                        )
+                    }else if(respuesta == "ya_votaste"){
+                        Swal.fire(
+                            'Ya se habia registrado tu voto',
+                            '',
+                            'info'
+                        )
+                    }else{
+                        Swal.fire(
+                            'Ya se habia registrado tu voto',
+                            '',
+                            'info'
+                        )
+                    }
+                    
+                },
+                error: function(respuesta) {
+                    console.log(respuesta);
+                }
+            });
+        })
     });
 </script>
 

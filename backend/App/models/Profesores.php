@@ -13,9 +13,18 @@ class Profesores{
       $mysqli = Database::getInstance();
       $query=<<<sql
         SELECT *
-        FROM profesores
+        FROM profesores where internacional = 0 order by nombre
 sql;
       return $mysqli->queryAll($query);
+    }
+
+    public static function getAllInternacional(){
+        $mysqli = Database::getInstance();
+        $query=<<<sql
+        SELECT *
+        FROM profesores where internacional = 1 order by nombre
+sql;
+        return $mysqli->queryAll($query);
     }
 
     public static function getById($id){

@@ -119,35 +119,45 @@ html;
 
 html;
 
-        $cursos = ProfesoresDao::getAll();
+        $prof_nacional = ProfesoresDao::getAll();
+        $prof_internacional = ProfesoresDao::getAllInternacional();
 
-        $card_profesores = '';
+        $card_profesores_nacionales = '';
+        $card_profesores_internacionales = '';
 
-        foreach ($cursos as $key => $value) {
-            // $progreso = ProfesoresDao::getProgreso($_SESSION['id_registrado'],$value['id_curso']);
 
-            // $max_time = $value['duracion'];
-            // $duracion_sec = substr($max_time,strlen($max_time)-2,2);
-            // $duracion_min = substr($max_time,strlen($max_time)-5,2);
-            // $secs_totales = (intval($duracion_min)*60)+intval($duracion_sec);
-
-            // $porcentaje = round(($progreso['segundos']*100)/$secs_totales);
-
-            $card_profesores .= <<<html
-            
+        foreach ($prof_nacional as $key => $value) {
+            $card_profesores_nacionales .= <<<html
             
             <div class="col-12 col-md-3 text-center">
+            <br>
                 <div class="card card-body card-course p-0 border-radius-15">
                     <input class="curso" hidden type="text" value="{$value['id_profesor']}" readonly>
-                        <img class="profesor-img" src="/profesores_img/{$value['img']}">
-                        <div class="mt-2 color-vine font-14 text-bold"><p><b>{$value['prefijo']} {$value['nombre']}</b></p></div>
-                        <div class="color-vine font-12"><p>{$value['descripcion']}</p></div>
+                        <img class="profesor-img" src="/profesores_img/{$value['img']}.png">
+                        <!--<div class="mt-2 color-vine font-14 text-bold"><p><b>{$value['prefijo']} {$value['nombre']}</b></p></div>-->
+                        <!--<div class="color-vine font-12" style="color:#0F978D;"><p style="color:#0F978D; font-size:11px;">{$value['descripcion']}</p></div>-->
                 </div>
             </div>
 html;
         }
 
-        View::set('card_profesores',$card_profesores);
+        foreach ($prof_internacional as $key => $value) {
+            $card_profesores_internacionales .= <<<html
+            
+            <div class="col-12 col-md-3 text-center">
+            <br>
+                <div class="card card-body card-course p-0 border-radius-15">
+                    <input class="curso" hidden type="text" value="{$value['id_profesor']}" readonly>
+                        <img class="profesor-img" src="/profesores_img/{$value['img']}.png">
+                        <!--<div class="mt-2 color-vine font-14 text-bold"><p><b>{$value['prefijo']} {$value['nombre']}</b></p></div>-->
+                        <!--<div class="color-vine font-12" style="color:#0F978D;"><p style="color:#0F978D; font-size:11px;">{$value['descripcion']}</p></div>-->
+                </div>
+            </div>
+html;
+        }
+
+        View::set('card_profesores_nacionales',$card_profesores_nacionales);
+        View::set('card_profesores_internacionales',$card_profesores_internacionales);
         View::set('header',$this->_contenedor->header($extraHeader));
         View::set('footer',$this->_contenedor->footer($extraFooter));
         View::render("profesores_all");

@@ -125,7 +125,8 @@ html;
 
         $programa_fecha1 = <<<html
         <h4 class="mb-1 mt-1 text-center">Programa</h4>
-        <h5 class="mb-3 text-center">{$info_fecha1[0]['fecha']}</h5>        
+        <br>     
+        <br>       
 html;
 
         foreach ($info_fecha1 as $key => $value) {

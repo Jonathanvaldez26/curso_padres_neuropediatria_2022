@@ -27,9 +27,9 @@ class Contenedor extends Controller{
           <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-           <link rel="icon" type="image/vnd.microsoft.icon" href="../../../assets/img/Musa0-01.png">
+           <link rel="icon" type="image/vnd.microsoft.icon" href="../../../assets/img/Logo_SMNP.png">
             <!--title>
-               Home - MUSA
+               Congreso XXXI Neuropediatría
             </title-->
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
             <!-- Nucleo Icons -->
@@ -60,6 +60,11 @@ class Contenedor extends Controller{
             #lbl-image{
                 cursor: pointer;
             }
+           
+            .heart-like .heart-not-like{
+                cursor: pointer;
+            }
+          
            </style>
             <!-- TEMPLATE VIEJO-->
         </head>

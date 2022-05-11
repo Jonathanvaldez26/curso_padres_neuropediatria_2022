@@ -120,49 +120,124 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-">
-        <div class="row mt-0 m-auto">
-            <div class="col-lg-1">
-            </div>
-            <div class="card col-lg-10 mt-lg-5 mt-1" >
-                <div class="card-header pb-0 p-3">
-                    <div class="row">
-                    <img src="/assets/img/cinta_menu.jpeg" style="border-radius: 20px; height: 38px;" alt="">
-                    </div>
-                    <h4 class="mb-1 mt-4 text-left"><i class="fa fa-desktop"></i> Profesores</h4>
-                    <p>(Usted tiene disponible los siguientes cursos)</p>
-                    
-                </div>
-                <div class="card-body p-3">
+        <div class="row">
+            <div class="col-12 col-md-10 m-auto p-1">
+                <div class="card card-body" id="profile">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-sm-auto col-4">
+                            <div class="avatar avatar-xl position-relative">
+                                <img src="/assets/img/Logo_SMNP.png">
+                            </div>
+                        </div>
+                        <div class="col-sm-auto col-8 my-auto">
+                            <div class="h-100">
+                                <h5 class="mb-1 font-weight-bolder" id="nombre_transmision">
+                                    Profesores Nacionales e Internacionales
+                                </h5>
+                            </div>
+                        </div>
 
-                    <div class="row mt-3">
-                        <?php echo $card_profesores ?>
-                    </div>
+                        <div class="col-sm-auto ms-sm-auto mt-sm-0 mt-3 me-4">
 
-                    <div hidden class="row mt-4">
-                        <div class="col-xl-4 col-md-3 mb-xl-0 mb-4 "></div>
-                        <table class="table align-items-center mb-0 table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Nombre</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Fecha de curso</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">¿Tiene costo?</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-10">Modalidad</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php echo $tabla_profesores; ?>
-                            </tbody>
-                        </table>
-                        <div class="col-xl-4 col-md-0 mb-xl-0 mb-4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="button-row d-flex mt-4 col-12">
-                            <a class="btn bg-gradient-light mb-0 js-btn-prev" href="/Home/" title="Prev">Regresar</a>
+                        </div>
+                        <div class="col-sm-auto ms-sm-auto mt-sm-0 mt-3 d-flex">
+                            <a href="/Home/" class="mt-2 me-2 btn-move">
+                                <span class="text-dark mt-2"><i class="fas fa-undo"></i> Regresar</span>
+                            </a>
+                            <div class="form-check form-switch ms-2 p-0">
+                                <div class="row text-center">
+
+                                    <div class="col-lg-12 col-md-12 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+
+                                        <div class="nav-wrapper position-relative end-0">
+
+                                            <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
+                                                <li class="nav-item transmisiones px-3" data-transmision="1">
+                                                    <a class="nav-link mb-0 px-0 py-1 active" href="#m_18" data-bs-toggle="tab" role="tab" aria-selected="true">
+                                                        <span class="fa fa-globe-africa"></span>
+                                                        <span class="ms-1">Nacionales</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item transmisiones px-3" data-transmision="2">
+                                                    <a class="nav-link mb-0 px-0 py-1" href="#m_19" data-bs-toggle="tab" role="tab" aria-selected="false">
+                                                        <span class="fa fa-globe-americas"></span>
+                                                        <span class="ms-1">Internacionales</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row mt-0 m-auto">
+            <div class="col-lg-1">
+            </div>
+
+            <div class="card col-lg-10 mt-lg-3 mt-1" >
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show position-relative active border-radius-lg" id="m_18" role="tabpanel" aria-labelledby="m_18">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <img src="/assets/img/cinta_menu.jpeg" style="border-radius: 20px; height: 38px;" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <div class="row mt-3">
+                                    <div class="card-body p-3">
+
+                                        <div class="row mt-3">
+                                            <br>
+                                            <?php echo $card_profesores_nacionales; ?>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="button-row d-flex mt-4 col-12">
+                                                <a class="btn bg-gradient-light mb-0 js-btn-prev" href="/Home/" title="Prev">Regresar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show position-relative active border-radius-lg" id="m_19" role="tabpanel" aria-labelledby="m_19">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <img src="/assets/img/cinta_menu.jpeg" style="border-radius: 20px; height: 38px;" alt="">
+                            </div>
+                        </div>
+
+
+                        <div class="card-body p-3">
+                            <div class="row mt-3">
+                                <div class="card-body p-3">
+
+                                    <div class="row mt-3">
+                                        <br>
+                                        <?php echo $card_profesores_internacionales; ?>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="button-row d-flex mt-4 col-12">
+                                            <a class="btn bg-gradient-light mb-0 js-btn-prev" href="/Home/" title="Prev">Regresar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
         <br>
         <br>
     </div>
