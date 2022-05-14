@@ -4,6 +4,7 @@ namespace App\controllers;
 use \Core\View;
 use \Core\Controller;
 use \App\models\Talleres AS TalleresDao;
+use \App\models\Data AS DataDao;
 
 class Talleres extends Controller{
 
@@ -665,6 +666,8 @@ html;
 
             
             // var_dump($preguntas)
+            $info_user = DataDao::getInfoUserById($_SESSION['id_registrado']);
+
 
             View::set('clave',$clave);
             View::set('encuesta',$encuesta);
@@ -677,6 +680,7 @@ html;
             View::set('contenido_taller',$contenido_taller);
             View::set('progreso_curso',$progreso_curso);
             View::set('secs_totales',$secs_totales);
+            View::set('info_user',$info_user);
             View::set('header',$this->_contenedor->header($extraHeader));
             View::set('footer',$this->_contenedor->footer($extraFooter));
             View::render("video_all");
@@ -786,7 +790,7 @@ html;
         $data->_sala = $sala;
 
 
-        $id = TransmisionDao::insertChat($data);
+        $id = TalleresDao::insertChat($data);
 
         if ($id) {
             echo "success";

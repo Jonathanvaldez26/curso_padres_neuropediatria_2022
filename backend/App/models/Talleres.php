@@ -21,6 +21,25 @@ sql;
       return "getById"+$id;
     }
 
+    public static function insertChat($data){
+        $mysqli = Database::getInstance(1);
+        $query=<<<sql
+        INSERT INTO chat (id_registrado, chat, 	fecha, tipo, id_tipo, sala) 
+        VALUES (:id_registrado,:chat,NOW(),:tipo,:id_tipo,:sala)
+sql;
+        $parametros = array(
+            ':id_registrado'=>$data->_id_registrado,
+            ':chat'=>$data->_chat,
+            ':tipo'=>$data->_tipo,
+            ':id_tipo'=>$data->_id_tipo,
+            ':sala'=>$data->_sala
+        );
+
+        $id = $mysqli->insert($query, $parametros);
+
+        return $id;
+    }
+
     public static function getCursoByClave($clave){
       $mysqli = Database::getInstance();
       $query=<<<sql

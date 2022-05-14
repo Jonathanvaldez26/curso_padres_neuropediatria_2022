@@ -126,6 +126,7 @@
             </div>
         </div>
         <div class="col-12 col-lg-4">
+            <br>
             <div class="card">
                 <div class="card blur shadow-blur max-height-vh-70">
                     <div class="card-header shadow-lg">
@@ -135,10 +136,8 @@
                                     <!--img alt="Image" src="assets/img/bruce-mars.jpg" class="avatar"-->
                                     <div class="ms-3">
                                         <div class="d-flex align-items-center">
-                                            <img alt="Image" src="../../../img/users_musa/<?php echo $info_user['avatar_img']; ?>" class="avatar">
-                                            <div class="ms-3">
-                                                <h6 class="mb-0 d-block"><?php echo $info_user['prefijo'] . ' ' . $info_user['nombre']; ?></h6>
-                                                <span class="text-sm text-dark opacity-8">Tus Preguntas al Ponente</span>
+                                            <div class="ms-1">
+                                                <h6 class="mb-0 d-block">Preguntas al Ponente</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -493,7 +492,7 @@
         }
 
         $.ajax({
-            url: "/Transmission/saveChat",
+            url: "/Talleres/saveChat",
             type: "POST",
             data: formData,
             contentType: false,
