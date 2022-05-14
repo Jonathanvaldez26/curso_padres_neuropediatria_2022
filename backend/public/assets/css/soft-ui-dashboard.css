@@ -37360,6 +37360,13 @@ iframe.video_programa{
   border-radius: 20px!important;
 }
 
+div.disabled {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+  pointer-events: none;
+}
 
 /* .heart-like:hover{
   color: #ffffff80;

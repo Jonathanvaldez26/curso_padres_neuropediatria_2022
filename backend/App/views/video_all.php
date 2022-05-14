@@ -138,17 +138,17 @@
     <br>
 
     <!-- Modal -->
-        <div class="modal fade" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
+        <div class="modal fade disabled" onclick="habilitarClic();" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
             <div class="modal-dialog modal-size" role="document">
                 <div class="modal-content">
-                    <div class="modal-header text-center">
+                    <!--<div class="modal-header text-center">
                         <h5 class="modal-title text-center" id="doc_programaLabel">Cierra para descargar</h5>
                         <a href="C:\xampp\Proyectos\curso_padres_neuropediatria_2022\backend\public\assets\pdf\programa.pdf" download="programa.pdf">
-                            <button type="button" class="btn bg-gradient-danger" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="btn bg-gradient-danger" onclick="descargarConstancia();" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </a>
-                    </div>
+                    </div>-->
                     <div class="card-body p-3">
                         <div class="row mt-3">
                             <video autoplay muted loop>
@@ -171,6 +171,28 @@
 
 
 <script>
+
+    function descargarConstancia(url){
+        let data = JSON.stringify([{email: "test@domain.com", name: "test"}, {email: "anothertest@example.com", name: "anothertest"}]);
+
+        let type = "assets/pdf", name = "pdf-prueba.pdf";
+        downloader(data, type, name)
+
+        function downloader(data, type, name) {
+            let blob = new Blob([data], {type});
+            let url = window.URL.createObjectURL(blob);
+            downloadURI(url, name);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function downloadURI(uri, name) {
+            let link = document.createElement("a");
+            link.download = name;
+            link.href = uri;
+            link.click();
+        }
+    }
+
     $(document).ready(function(){
 
         let list_r = [];
