@@ -141,6 +141,7 @@
         <div class="modal fade" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
             <div class="modal-dialog modal-size" role="document">
                 <div class="modal-content">
+<<<<<<< HEAD
                     
                 <div class="row mb-3 mt-0 m-auto">
                     <div class="col-12 col-md-12 m-auto">
@@ -150,6 +151,13 @@
                     </div>
                 </div>
 
+=======
+                    <form id="encuesta_curso" action="" method="post">
+                        <div class="modal-body">
+                            aqui mete el video
+                        </div>
+                    </form>
+>>>>>>> b9fb276830a4f670c47d5679be6efd6617447f0b
                 </div>
             </div>
         </div>

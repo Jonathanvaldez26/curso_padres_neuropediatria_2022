@@ -389,7 +389,7 @@ html;
                 if ($curso['status'] == 2 || $porcentaje >= 80) {
                     $btn_encuesta =<<<html
                     <button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">
-                        Examen
+                        Descarga tu Constancia
                     </button>
 html;
                 } else {
