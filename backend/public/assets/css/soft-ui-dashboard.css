@@ -7869,6 +7869,7 @@ fieldset:disabled .btn {
   z-index: 1030;
 }
 
+
 .sticky-top {
   position: sticky;
   top: 0;
@@ -37366,6 +37367,21 @@ div.disabled {
   -ms-user-select: none;
   user-select: none; 
   pointer-events: none;
+}
+
+
+.icon-wa{
+  font-size: xx-large;
+  background-color: green;
+  border-radius: 80px;
+  box-shadow: 0px 0px 15px 0px #000000af;
+  color: white;
+}
+
+.space-wa{
+  z-index: 200;
+  color: white;
+  left: auto;
 }
 
 /* .heart-like:hover{
