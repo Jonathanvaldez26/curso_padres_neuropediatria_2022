@@ -214,10 +214,22 @@ html;
 html;
         }
 
+        $video_programa = '';
+        $video_programa .= <<<html
+            <div class="row mb-3 mt-0 m-auto">
+                <div class="col-12 col-md-12 m-auto">
+                    <div class="row">
+                        <iframe id="iframe" class="bg-gradient-warning iframe-course" src="{\assets\img\video_pop_up}" width="640" height="521" frameborder="0">a</iframe>
+                    </div>
+                </div>
+            </div>
+html;
+        View::set('video_programa',$video_programa);
         View::set('card_cursos',$card_cursos);
         View::set('header',$this->_contenedor->header($extraHeader));
         View::set('footer',$this->_contenedor->footer($extraFooter));
         View::render("talleres_all");
+        View::render("video_all");
     }
 
     public function Video($clave){

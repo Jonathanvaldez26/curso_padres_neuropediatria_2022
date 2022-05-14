@@ -141,8 +141,15 @@
         <div class="modal fade" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
             <div class="modal-dialog modal-size" role="document">
                 <div class="modal-content">
+                    
+                <div class="row mb-3 mt-0 m-auto">
+                    <div class="col-12 col-md-12 m-auto">
+                        <div class="row">
+                            <iframe id="iframe" class="bg-gradient-warning iframe-course" src="{\assets\img\video_pop_up}" width="640" height="521" frameborder="0">a</iframe>
+                        </div>
+                    </div>
+                </div>
 
-                    Aqui mete el video
                 </div>
             </div>
         </div>
