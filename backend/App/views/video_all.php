@@ -141,23 +141,13 @@
         <div class="modal fade" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
             <div class="modal-dialog modal-size" role="document">
                 <div class="modal-content">
-<<<<<<< HEAD
-                    
-                <div class="row mb-3 mt-0 m-auto">
-                    <div class="col-12 col-md-12 m-auto">
-                        <div class="row">
-                            <iframe id="iframe" class="bg-gradient-warning iframe-course" src="{\assets\img\video_pop_up}" width="640" height="521" frameborder="0">a</iframe>
-                        </div>
+                    <div class="card-body p-3">
+                                <div class="row mt-3">
+                                <video autoplay muted loop>
+                                    <source class="position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/video_pop_up.mp4" type="video/mp4">
+                                </video>
+                                </div>
                     </div>
-                </div>
-
-=======
-                    <form id="encuesta_curso" action="" method="post">
-                        <div class="modal-body">
-                            aqui mete el video
-                        </div>
-                    </form>
->>>>>>> b9fb276830a4f670c47d5679be6efd6617447f0b
                 </div>
             </div>
         </div>
