@@ -300,7 +300,7 @@ html;
         $_SESSION['nombre'] = $user['nombre'];
         $_SESSION['id_registrado'] = $user['id_registrado'];
 
-        header("location: /Talleres/");
+        header("location: /Talleres/Video/SalaVirtual");
     }
 
     public function cerrarSession(){
