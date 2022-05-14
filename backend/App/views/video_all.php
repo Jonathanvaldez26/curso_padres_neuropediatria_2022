@@ -141,29 +141,8 @@
         <div class="modal fade" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
             <div class="modal-dialog modal-size" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="encuestaLabel">Examen para <?php echo $nombre_taller;?></h5>
-                        <button type="button" class="btn bg-gradient-danger text-lg btn-icon-only" data-dismiss="modal" aria-label="Close">
-                            <span class="" aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form id="encuesta_curso" action="" method="post">
-                        <div class="modal-body">
-                            <div>
-                                <p class="text-success text-center">
-                                    <strong>Instrucciones:</strong> Responde a cada una de las preguntas, que a continuación se presentan
-                                </p>
-                            </div>
-                            <hr class="horizontal dark my-3">
-                            <div class="encuesta">
-                                <?php echo $encuesta;?>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" id="enviar_encuesta" class="btn bg-gradient-success">Enviar</button>
-                            <button type="button" class="btn bg-gradient-secondary" data-dismiss="modal">Cancelar</button>
-                        </div>
-                    </form>
+
+                    Aqui mete el video
                 </div>
             </div>
         </div>
@@ -283,7 +262,7 @@
                 }
 
                 if (porcentaje_num >= 79) {
-                    $('#btn-examen').html('<button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">Examen</button>');
+                    $('#btn-examen').html('<button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">Descarga tu Constancia</button>');
                 }
 
                 $('#barra_progreso').val(inicio);
