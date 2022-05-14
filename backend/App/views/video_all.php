@@ -156,7 +156,7 @@
                             </video>
                         </div>
                         <br>
-                        <p class="text-center"> En breve se descargara su constancia...</p>
+                        <p class="text-center"> En breve se descargará su constancia...</p>
                     </div>
                 </div>
             </div>
