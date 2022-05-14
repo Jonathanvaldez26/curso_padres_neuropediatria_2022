@@ -667,6 +667,32 @@ html;
             
             // var_dump($preguntas)
             $info_user = DataDao::getInfoUserById($_SESSION['id_registrado']);
+            $transmision_1 = TalleresDao::getTransmisionById(1);
+
+            $data_1 = new \stdClass();
+            $data_1->_tipo = 1;
+            $data_1->_sala = 1;
+            $data_1->_id_tipo = $transmision_1['id_transmision'];
+
+            $chat_transmision_1 = TalleresDao::getChatByID($data_1);
+            $cont_chat_1 = '';
+
+            foreach ($chat_transmision_1 as $chat => $value) {
+                $nombre_completo = $value['nombre'] . ' ' . $value['apellidop'] . ' ' . $value['apellidom'];
+                $cont_chat_1 .= <<<html
+            <div class="d-flex mt-3">
+                <div class="flex-shrink-0">
+                    <img alt="Image placeholder" class="avatar rounded-circle" src="../../../img/users_musa/{$value['avatar_img']}">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    <h6 class="h5 mt-0">{$nombre_completo}</h6>
+                    <p class="text-sm">{$value['chat']}</p>
+                    
+                </div>
+            </div>
+html;
+            }
+
 
 
             View::set('clave',$clave);
@@ -681,6 +707,8 @@ html;
             View::set('progreso_curso',$progreso_curso);
             View::set('secs_totales',$secs_totales);
             View::set('info_user',$info_user);
+            View::set('chat_transmision_1', $cont_chat_1);
+            View::set('transmision_1', $transmision_1);
             View::set('header',$this->_contenedor->header($extraHeader));
             View::set('footer',$this->_contenedor->footer($extraFooter));
             View::render("video_all");

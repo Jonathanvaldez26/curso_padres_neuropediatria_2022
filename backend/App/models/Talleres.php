@@ -40,6 +40,35 @@ sql;
         return $id;
     }
 
+
+    public static function getTransmisionById($id){
+        $mysqli = Database::getInstance(true);
+        $query =<<<sql
+        SELECT * FROM transmision
+        WHERE id_transmision = $id
+sql;
+
+        return $mysqli->queryOne($query);
+    }
+
+
+    public static function getChatByID($data){
+        $mysqli = Database::getInstance(true);
+        $query =<<<sql
+        SELECT c.*, reg.nombre, reg.apellidop, reg.apellidom, reg.avatar_img
+        FROM chat c
+        INNER JOIN registrados reg ON (reg.id_registrado = c.id_registrado)
+        WHERE c.tipo = :tipo and c.sala = :sala and c.id_tipo = :id_tipo;
+sql;
+
+        $parametros = array(
+            ':tipo'=>$data->_tipo,
+            ':sala'=>$data->_sala,
+            ':id_tipo'=>$data->_id_tipo
+        );
+        return $mysqli->queryAll($query, $parametros);
+    }
+
     public static function getCursoByClave($clave){
       $mysqli = Database::getInstance();
       $query=<<<sql
