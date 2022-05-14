@@ -102,6 +102,54 @@
         </div>
         <div class="col-12 col-lg-4">
             <div class="card">
+                    <div class="card blur shadow-blur max-height-vh-70">
+                        <div class="card-header shadow-lg">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="d-flex align-items-center">
+                                        <!--img alt="Image" src="assets/img/bruce-mars.jpg" class="avatar"-->
+                                        <div class="ms-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="ms-3">
+                                                    <h6 class="mb-0 d-block">Tus Preguntas al Ponente</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer d-block">
+                            <form class="align-items-center" autocomplete="nope" id="form_pregunta" method="post" onsubmit="return false;" accept-charset="utf-8">
+                                <div class="d-flex">
+                                    <div class="input-group" style="display: none;">
+                                        <input type="hidden" name="id_tipopre" id="id_tipopre" value="1">
+                                        <input type="hidden" name="salapre" id="salapre" value="1">
+
+                                    </div>
+
+                                    <div class="input-group">
+
+                                        <input type="text" name="txt_pregunta" id="txt_pregunta" class="form-control" placeholder="Escribe tu pregunta al ponente aquí." aria-label="Message example input" onfocus="focused(this)" onfocusout="defocused(this)">
+                                    </div>
+
+
+                                    <div class="input-group" style="display: none;">
+                                        <input class="form-control" style="visibility: hidden" type="hidden" name="registrado" id="registrado" value="90323" onfocus="focused(this)" onfocusout="defocused(this)">
+
+                                    </div>
+                                    <button class="btn bg-gradient-success mb-0 ms-2" onclick="savePregunta()">
+                                        <i class="ni ni-send"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <br>
+            <div class="card">
                 <div class="card blur shadow-blur max-height-vh-70">
                     <div class="card-header shadow-lg">
                         <div class="row">
