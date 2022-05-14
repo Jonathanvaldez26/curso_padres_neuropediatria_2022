@@ -141,12 +141,20 @@
         <div class="modal fade" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
             <div class="modal-dialog modal-size" role="document">
                 <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title text-center" id="doc_programaLabel">Cierra para descargar</h5>
+                        <a href="C:\xampp\Proyectos\curso_padres_neuropediatria_2022\backend\public\assets\pdf\programa.pdf" download="programa.pdf">
+                            <button type="button" class="btn bg-gradient-danger" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </a>
+                    </div>
                     <div class="card-body p-3">
-                                <div class="row mt-3">
-                                <video autoplay muted loop>
-                                    <source class="position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/video_pop_up.mp4" type="video/mp4">
-                                </video>
-                                </div>
+                        <div class="row mt-3">
+                            <video autoplay muted loop>
+                                <source class="position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/video_pop_up.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
