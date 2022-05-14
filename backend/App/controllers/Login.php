@@ -300,7 +300,7 @@ html;
         $_SESSION['nombre'] = $user['nombre'];
         $_SESSION['id_registrado'] = $user['id_registrado'];
 
-        header("location: /Home/");
+        header("location: /Talleres/");
     }
 
     public function cerrarSession(){
