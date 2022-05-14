@@ -747,6 +747,66 @@ html;
         }
     }
 
+    public function savePregunta()
+    {
+        $pregunta = $_POST['txt_pregunta'];
+        $salapre = $_POST['salapre'];
+        $id_tipopre = $_POST['id_tipopre'];
+
+
+
+        $data = new \stdClass();
+        $data->_id_registrado = $_SESSION['id_registrado'];
+        $data->_pregunta = $pregunta;
+        $data->_tipopre = 1;
+        $data->_id_tipopre = $id_tipopre;
+        $data->_salapre = $salapre;
+
+
+        $id = TalleresDao::insertPregunta($data);
+
+        if ($id) {
+            echo "success";
+        } else {
+            echo "fail";
+        }
+    }
+
+    public function saveChat()
+    {
+        $chat = $_POST['txt_chat'];
+        $sala = $_POST['sala'];
+        $id_tipo = $_POST['id_tipo'];
+
+        $data = new \stdClass();
+        $data->_id_registrado = $_SESSION['id_registrado'];
+        $data->_chat = $chat;
+        $data->_tipo = 1;
+        $data->_id_tipo = $id_tipo;
+        $data->_sala = $sala;
+
+
+        $id = TransmisionDao::insertChat($data);
+
+        if ($id) {
+            echo "success";
+        } else {
+            echo "fail";
+        }
+    }
+
+    public function updateProgressWithDate()
+    {
+        $progreso = $_POST['segundos'];
+        $transmision = $_POST['transmision'];
+
+        TransmisionDao::updateProgresoFecha($transmision, $_SESSION['id_registrado'], $progreso);
+
+        echo $progreso . ' ID_Tr: ' . $transmision;
+    }
+
+
+
     public function uploadComprobante(){
 
         $documento = new \stdClass();

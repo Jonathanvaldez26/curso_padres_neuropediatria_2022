@@ -64,6 +64,25 @@ sql;
       
     }
 
+    public static function insertPregunta($data){
+        $mysqli = Database::getInstance(1);
+        $query=<<<sql
+        INSERT INTO preguntas_transmision (id_registrado, pregunta, 	fecha, tipo, id_tipo, sala) 
+        VALUES (:id_registrado,:pregunta,NOW(),:tipo,:id_tipo,:sala)
+sql;
+        $parametros = array(
+            ':id_registrado'=>$data->_id_registrado,
+            ':pregunta'=>$data->_pregunta,
+            ':tipo'=>$data->_tipopre,
+            ':id_tipo'=>$data->_id_tipopre,
+            ':sala'=>$data->_salapre
+        );
+
+        $id = $mysqli->insert($query, $parametros);
+
+        return $id;
+    }
+
     public static function updateVistasByClave($clave,$vistas){
       $mysqli = Database::getInstance();
       $query=<<<sql
