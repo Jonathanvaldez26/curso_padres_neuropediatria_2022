@@ -89,7 +89,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="/Home/">Inicio</a></li>
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="/Talleres/">Inicio</a></li>
                     <li class="breadcrumb-item text-sm">Talleres</li>
                 </ol>
             </nav>
@@ -101,7 +101,7 @@
 
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
-                   
+
                     </li>
                 </ul>
                 <ul class="navbar-nav  justify-content-end">

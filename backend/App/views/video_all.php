@@ -26,8 +26,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="/Home/">Inicio</a></li>
-                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="/Talleres/">Talleres</a></li>
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark">Talleres</a></li>
                     <li class="breadcrumb-item text-sm">Video</li>
                     <li class="breadcrumb-item text-sm"><?php echo $nombre_taller; ?></li>
                 </ol>
@@ -39,12 +38,7 @@
                 </div>
 
                 <ul class="navbar-nav  justify-content-end">
-                    <li class="nav-item d-flex align-items-center">
-                        <a href="/Home/" class="nav-link text-body font-weight-bold mx-lg-4 mx-0 px-0">
-                            <i class="fa fa-home me-sm-0"></i>
-                            <span class="d-sm-inline d-none">Inicio</span>
-                        </a>
-                    </li>
+
                 </ul>
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
