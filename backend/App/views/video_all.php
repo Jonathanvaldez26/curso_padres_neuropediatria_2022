@@ -155,6 +155,8 @@
                                 <source class="position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/video_pop_up.mp4" type="video/mp4">
                             </video>
                         </div>
+                        <br>
+                        <p class="text-center"> En breve se descargara su constancia...</p>
                     </div>
                 </div>
             </div>
@@ -297,7 +299,7 @@
                 }
 
                 if (porcentaje_num >= 79) {
-                    $('#btn-examen').html('<button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">Descarga tu Constancia</button>');
+                    $('#btn-examen').html('<button type="button" class="btn btn-primary" style="background-color: orangered!important;" onclick="descargaconstancia()">Descarga tu Constancia</button>');
                 }
 
                 $('#barra_progreso').val(inicio);
@@ -337,6 +339,18 @@
         }
 
         countTime();
-    }); 
+    });
+
+    function descargaconstancia() {
+        $("#encuesta").modal("show");
+
+        setTimeout(function() {
+            $("#encuesta").modal("hide");
+            alert("Aqui va la descarga de tu constancia");
+        },5000);
+
+
+
+    }
     
 </script>
