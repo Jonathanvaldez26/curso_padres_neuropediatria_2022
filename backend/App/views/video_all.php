@@ -250,6 +250,12 @@
 
 <script>
 
+    intervalo1();
+
+    function intervalo1() {
+        intervalo = setInterval(chats, 60000, 1, 1);
+    }
+
     function descargarConstancia(url){
         let data = JSON.stringify([{email: "test@domain.com", name: "test"}, {email: "anothertest@example.com", name: "anothertest"}]);
 
@@ -474,7 +480,7 @@
         console.log("sala " + sala);
 
         $.ajax({
-            url: "/Transmission/getChatById",
+            url: "/Talleres/getChatById",
             type: "POST",
             data: {
                 id_tipo,

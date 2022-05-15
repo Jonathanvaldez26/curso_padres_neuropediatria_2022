@@ -51,6 +51,16 @@ sql;
         return $mysqli->queryOne($query);
     }
 
+    public static function getCursosById($id){
+      $mysqli = Database::getInstance(true);
+      $query =<<<sql
+      SELECT * FROM cursos
+      WHERE id_curso = $id
+sql;
+
+      return $mysqli->queryOne($query);
+  }
+
 
     public static function getChatByID($data){
         $mysqli = Database::getInstance(true);

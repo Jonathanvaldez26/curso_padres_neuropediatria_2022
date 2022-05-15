@@ -720,6 +720,22 @@ html;
         }
     }
 
+    public function getChatById()
+    {
+        $id_tipo = $_POST['id_tipo'];
+        $sala = $_POST['sala'];
+
+        $transmision = TalleresDao::getCursosById($id_tipo);
+        $data = new \stdClass();
+        $data->_tipo = 1;
+        $data->_sala = $sala;
+        $data->_id_tipo = $transmision['id_curso'];
+
+        $chat_transmision = TalleresDao::getChatByID($data);
+
+        echo json_encode($chat_transmision);
+    }
+
     public function guardarRespuestas(){
         $respuestas = $_POST['list_r'];
         $id_curso = $_POST['id_curso'];
