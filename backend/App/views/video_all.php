@@ -225,6 +225,7 @@
                     </div>-->
                     <div class="card-body p-3">
                         <div class="row mt-3">
+                            <input id='constancia_nombre' name="constancia_nombre" value="a">
                             <video autoplay muted loop>
                                 <source class="position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/video_pop_up.mp4" type="video/mp4">
                             </video>
@@ -417,10 +418,39 @@
 
     function descargaconstancia() {
         $("#encuesta").modal("show");
+        setTimeout(function() {
+            $("#encuesta").modal("hide");
+
+        },5000);
+
+        $.ajax({
+            url: "/Talleres/generarPDF",
+            type: "POST",
+            async: false,
+            data: {
+                nombre: function() {
+                    return $("#constancia_nombre").val();
+                }},
+            success: function(respuesta) {
+                console.log(respuesta);
+                if (respuesta == "success") {
+                    console.log('Descarga Lista');
+                }
+            },
+            error: function(respuesta) {
+                console.log(respuesta);
+            }
+        });
 
         setTimeout(function() {
             $("#encuesta").modal("hide");
-            alert("Aqui va la descarga de tu constancia");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Agradecemos su participación.',
+                showConfirmButton: false,
+                timer: 1500
+            })
         },5000);
 
 
@@ -515,8 +545,6 @@
         });
     }
 
-
-
     function savePregunta() {
         //event.preventDefault(event);
         var formData = new FormData(document.getElementById("form_pregunta"));
@@ -557,5 +585,6 @@
             }
         });
     }
+
     
 </script>

@@ -1,5 +1,6 @@
 <?php
 namespace App\controllers;
+require_once dirname(__DIR__) . '/../public/librerias/fpdf/fpdf.php';
 
 use \Core\View;
 use \Core\Controller;
@@ -837,8 +838,6 @@ html;
         echo $progreso . ' ID_Tr: ' . $transmision;
     }
 
-
-
     public function uploadComprobante(){
 
         $documento = new \stdClass();
@@ -879,5 +878,38 @@ html;
     function generateRandomString($length = 10) {
         return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
     }
+
+    public function generarPDF(){
+        $dato = $_POST['nombre'];
+        $dataclave = $this->generateRandomString();
+        $datas = 'Nombre completo';
+        $pdf = new \FPDF($orientation = 'L', $unit = 'mm', $format='A4');
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', 'B', 8);    //Letra Arial, negrita (Bold), tam. 20
+        $pdf->setY(1);
+        $pdf->SetFont('Arial', 'B', 16);
+        $pdf->Image('PDF/template/Asistente.png', 0, 0, 296, 210);
+        // $pdf->SetFont('Arial', 'B', 25);
+        // $pdf->Multicell(133, 80, $clave_ticket, 0, 'C');
+
+        //$pdf->Image('1.png', 1, 0, 190, 190);
+        $pdf->SetFont('Arial', 'B', 5);    //Letra Arial, negrita (Bold), tam. 20
+        //$nombre = utf8_decode("Jonathan Valdez Martinez");
+        //$num_linea =utf8_decode("Línea: 39");
+        //$num_linea2 =utf8_decode("Línea: 39");
+
+        $pdf->SetXY(100, 95);
+        $pdf->SetFont('Arial', 'B', 30);
+        #4D9A9B
+        $pdf->SetTextColor(0, 0, 0);
+        $pdf->Multicell(90, 10, $dato, 0, 'C');
+        $pdf->Output();
+
+        //$nombre_archivo = "MPDF_".uniqid().".pdf";/* se genera un nombre unico para el archivo pdf*/
+        print_r($pdf->Output('PDF/'.$dataclave.'.pdf','F'));/* se genera el pdf en la ruta especificada*/
+
+        echo "success";
+    }
+
 
 }
