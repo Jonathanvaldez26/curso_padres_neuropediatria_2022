@@ -237,6 +237,24 @@
             </div>
         </div>
 
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Modal with Dynamic Content</h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php echo $iframe_doc; ?>
 
     <div class="fixed-bottom navbar-dark">
@@ -434,7 +452,7 @@
             success: function(respuesta) {
                 console.log(respuesta);
                 if (respuesta == "success") {
-                    console.log('Descarga Lista');
+                        $('#myModal').modal(show);
                 }
             },
             error: function(respuesta) {
@@ -442,16 +460,6 @@
             }
         });
 
-        setTimeout(function() {
-            $("#encuesta").modal("hide");
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Agradecemos su participación.',
-                showConfirmButton: false,
-                timer: 1500
-            })
-        },5000);
 
 
 

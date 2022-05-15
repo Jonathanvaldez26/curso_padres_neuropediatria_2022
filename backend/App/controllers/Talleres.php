@@ -906,9 +906,14 @@ html;
         $pdf->Output();
 
         //$nombre_archivo = "MPDF_".uniqid().".pdf";/* se genera un nombre unico para el archivo pdf*/
-        print_r($pdf->Output('PDF/'.$dataclave.'.pdf','F'));/* se genera el pdf en la ruta especificada*/
+        //print_r($pdf->Output('PDF/'.$dataclave.'.pdf','F'));/* se genera el pdf en la ruta especificada*/
 
-        echo "success";
+
+        //$var = "../../PDF/template/".$dataclave.'.pdf';
+
+        //readfile($var);
+
+        //echo "success";
     }
 
 
