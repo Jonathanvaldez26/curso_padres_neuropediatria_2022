@@ -193,6 +193,7 @@
                     <div class="card-footer d-block">
                         <progress id="barra_progreso" max="<?php echo $secs_totales;?>" value="<?php echo $progreso_curso['segundos'];?>"></progress>
                         <input type="text" name="" id="id_curso" hidden readonly value="<?php echo $id_curso;?>">
+                        <a href="" id="btn_download_constancia" download style="display:none;">Descargar</a>
                     </div>
                     <div class="row m-auto">
                         <div class="col-12" id="btn-examen">
@@ -374,7 +375,7 @@
                 }
 
                 if (porcentaje_num >= 79) {
-                    $('#btn-examen').html('<button type="button" class="btn btn-primary" style="background-color: orangered!important;" onclick="descargaconstancia()">Descarga tu Constancia</button>');
+                    $('#btn-examen').html('<button type="button" class="btn btn-primary" style="background-color: orangered!important;"  onclick="descargaconstancia()" data-toggle="modal" data-target="#encuesta" >Descarga tu Constancia</button>');
                 }
 
                 $('#barra_progreso').val(inicio);
@@ -417,32 +418,43 @@
     });
 
     function descargaconstancia() {
-        $("#encuesta").modal("show");
+        // $("#encuesta").modal("show");
+        // setTimeout(function() {
+        //     $("#encuesta").modal("hide");
+        //     location.reload();
+        // },5000);
+
+        // $('#btn_download_constancia').attr('href','/Talleres/generarPDF');
+        // $('#btn_download_constancia')[0].click(); 
+        
+        // $('#btn_download_constancia').attr('href',respuesta.ruta_documento);
+
+        // $.ajax({
+        //     url: "/Talleres/generarPDF",
+        //     type: "POST",
+        //     dataType: 'json',
+        //     async: false,
+        //     data: {
+        //         nombre: function() {
+        //             return $("#constancia_nombre").val();
+        //         }},
+        //     success: function(respuesta) {
+        //         console.log(respuesta);
+        //         if (respuesta.status == "success") {
+        //             console.log('Se genero');
+        //             $('#btn_download_constancia').attr('href',respuesta.ruta_documento);
+        //         }
+        //     },
+        //     error: function(respuesta) {
+        //         console.log(respuesta);
+        //     }
+        // });
+
         setTimeout(function() {
             $("#encuesta").modal("hide");
-        },5000);
-
-        $.ajax({
-            url: "/Talleres/generarPDF",
-            type: "POST",
-            async: false,
-            data: {
-                nombre: function() {
-                    return $("#constancia_nombre").val();
-                }},
-            success: function(respuesta) {
-                console.log(respuesta);
-                if (respuesta == "success") {
-                    console.log('Se genero');
-                }
-            },
-            error: function(respuesta) {
-                console.log(respuesta);
-            }
-        });
-
-        setTimeout(function() {
-            $("#encuesta").modal("hide");
+            $('#btn_download_constancia').attr('href','/Talleres/generarPDF');
+            $('#btn_download_constancia')[0].click();
+            location.reload();            
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',

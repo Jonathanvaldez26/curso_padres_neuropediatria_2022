@@ -22,6 +22,15 @@ sql;
         return $mysqli->queryAll($query);
     }
 
+    public static function getUser($email){
+      $mysqli = Database::getInstance(true);
+      $query =<<<sql
+      SELECT * FROM registrados  WHERE email = '$email'
+sql;
+
+      return $mysqli->queryAll($query);
+  }
+
     public static function getUserRegistrate($email){
       $mysqli = Database::getInstance(true);
       $query =<<<sql

@@ -6,6 +6,7 @@ use \Core\View;
 use \Core\Controller;
 use \App\models\Talleres AS TalleresDao;
 use \App\models\Data AS DataDao;
+use \App\models\Register AS RegisterDao;
 
 class Talleres extends Controller{
 
@@ -224,6 +225,7 @@ html;
     }
 
     public function Video($clave){
+
         $extraHeader =<<<html
 html;
         $extraFooter =<<<html
@@ -356,13 +358,13 @@ html;
                 
 html;
                 if ($curso['status'] == 2 || $porcentaje >= 80) {
-                    $btn_encuesta =<<<html
-                    <button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">
-                        Descarga tu Constancia
-                    </button>
-html;
+//                     $btn_encuesta =<<<html
+//                     <button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">
+//                         Descarga tu Constancia
+//                     </button>
+// html;
                 } else {
-                    $btn_encuesta = '';
+                    //$btn_encuesta = '';
                 }
             } else {
                 $contenido_taller .=<<<html
@@ -880,15 +882,22 @@ html;
     }
 
     public function generarPDF(){
-        $dato = $_POST['nombre'];
+        // $dato = $_POST['nombre'];
+
+        $datos_user = RegisterDao::getUser($this->getUsuario())[0];
+
+        $nombre = explode(" ", $datos_user['nombre']);
+        
+        $nombre_completo =$datos_user['prefijo'] ." ".$nombre[0] . " " .$datos_user['apellidop'] ;  
         $dataclave = $this->generateRandomString();
         $datas = 'Nombre completo';
+
         $pdf = new \FPDF($orientation = 'L', $unit = 'mm', $format='A4');
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 8);    //Letra Arial, negrita (Bold), tam. 20
         $pdf->setY(1);
         $pdf->SetFont('Arial', 'B', 16);
-        $pdf->Image('PDF/template/Asistente.png', 0, 0, 296, 210);
+        $pdf->Image('PDF/template/Asistente_2.PNG', 0, 0, 296, 210);
         // $pdf->SetFont('Arial', 'B', 25);
         // $pdf->Multicell(133, 80, $clave_ticket, 0, 'C');
 
@@ -898,22 +907,25 @@ html;
         //$num_linea =utf8_decode("Línea: 39");
         //$num_linea2 =utf8_decode("Línea: 39");
 
-        $pdf->SetXY(100, 95);
+        $pdf->SetXY(80, 95);
         $pdf->SetFont('Arial', 'B', 30);
         #4D9A9B
         $pdf->SetTextColor(0, 0, 0);
-        $pdf->Multicell(90, 10, $dato, 0, 'C');
-        $pdf->Output('D',$dataclave.'pfd');
+        $pdf->Multicell(130, 10, $nombre_completo, 0, 'C');
+        $pdf->Output('D',$dataclave.'.pdf');
 
         //$nombre_archivo = "MPDF_".uniqid().".pdf";/* se genera un nombre unico para el archivo pdf*/
-        print_r($pdf->Output('PDF/'.$dataclave.'.pdf','F'));/* se genera el pdf en la ruta especificada*/
+        // print_r($pdf->Output('PDF/'.$dataclave.'.pdf','F'));/* se genera el pdf en la ruta especificada*/
 
 
-        $var = "../../PDF/template/".$dataclave.'.pdf';
+        // $var = "../../PDF/template/".$dataclave.'.pdf';
 
-        readfile($var);
-
-        echo "success";
+        // readfile($var);
+        // $data = [
+        //     'status' => 'success',
+        //     'ruta_documento' => 'PDF/'.$dataclave.'.pdf'
+        // ];
+        // echo json_encode($data);
     }
 
 
