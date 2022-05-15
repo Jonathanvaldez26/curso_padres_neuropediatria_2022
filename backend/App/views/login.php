@@ -128,7 +128,7 @@ echo $header;
 
         <div class="fixed-bottom space-wa">
             <div class="m-5">
-                <a href="https://api.whatsapp.com/send?phone=5255 8010 4181&text=Buen%20d%C3%ADa" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=527293787668&text=Buen%20d%C3%ADa" target="_blank">
                     <span class="fa fa-whatsapp px-1 py-3-3 icon-wa bg-gradient-success"></span>
                 </a>
             </div>
