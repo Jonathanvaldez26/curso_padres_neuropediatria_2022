@@ -225,7 +225,7 @@
                     </div>-->
                     <div class="card-body p-3">
                         <div class="row mt-3">
-                            <input id='constancia_nombre' name="constancia_nombre" value="a">
+                            <input type="hidden" id='constancia_nombre' name="constancia_nombre" value="a">
                             <video autoplay muted loop>
                                 <source class="position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/video_pop_up.mp4" type="video/mp4">
                             </video>
@@ -236,24 +236,6 @@
                 </div>
             </div>
         </div>
-
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h4 class="modal-title">Modal with Dynamic Content</h4>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <?php echo $iframe_doc; ?>
 
@@ -438,7 +420,6 @@
         $("#encuesta").modal("show");
         setTimeout(function() {
             $("#encuesta").modal("hide");
-
         },5000);
 
         $.ajax({
@@ -452,7 +433,7 @@
             success: function(respuesta) {
                 console.log(respuesta);
                 if (respuesta == "success") {
-                        $('#myModal').modal(show);
+                    console.log('Se genero');
                 }
             },
             error: function(respuesta) {
@@ -460,6 +441,16 @@
             }
         });
 
+        setTimeout(function() {
+            $("#encuesta").modal("hide");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Agradecemos su participación.',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        },5000);
 
 
 

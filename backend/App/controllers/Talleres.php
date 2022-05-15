@@ -903,17 +903,17 @@ html;
         #4D9A9B
         $pdf->SetTextColor(0, 0, 0);
         $pdf->Multicell(90, 10, $dato, 0, 'C');
-        $pdf->Output();
+        $pdf->Output('D',$dataclave.'pfd');
 
         //$nombre_archivo = "MPDF_".uniqid().".pdf";/* se genera un nombre unico para el archivo pdf*/
-        //print_r($pdf->Output('PDF/'.$dataclave.'.pdf','F'));/* se genera el pdf en la ruta especificada*/
+        print_r($pdf->Output('PDF/'.$dataclave.'.pdf','F'));/* se genera el pdf en la ruta especificada*/
 
 
-        //$var = "../../PDF/template/".$dataclave.'.pdf';
+        $var = "../../PDF/template/".$dataclave.'.pdf';
 
-        //readfile($var);
+        readfile($var);
 
-        //echo "success";
+        echo "success";
     }
 
 
