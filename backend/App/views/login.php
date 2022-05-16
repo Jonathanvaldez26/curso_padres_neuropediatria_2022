@@ -22,81 +22,7 @@ echo $header;
                     </button>
                     <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
                         <ul class="navbar-nav navbar-nav-hover mx-auto">
-                            <!-- <li class="nav-item dropdown dropdown-hover mx-2">
-                                <a role="button" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center " id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Datos del evento
-                                    <img src=" ../../../assets/img/down-arrow-dark.svg " alt="down-arrow" class="arrow ms-1 d-lg-block d-none">
-                                    <img src="../../../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1 d-lg-none d-block">
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-animation dropdown-lg mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
-                                    <div class="d-none d-lg-block">
-                                        <ul class="list-group">
 
-                                            <li class="nav-item list-group-item border-0 p-0">
-                                                <a class="dropdown-item py-2 ps-3 border-radius-md" href="/DatosEvento">
-                                                    <div class="d-flex">
-                                                        <div class="icon h-10 me-3 d-flex mt-1">
-                                                            <svg class="text-secondary" width="16px" height="16px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                <title>settings</title>
-                                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                    <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                                                        <g transform="translate(1716.000000, 291.000000)">
-                                                                            <g transform="translate(304.000000, 151.000000)">
-                                                                                <polygon class="color-background" opacity="0.596981957" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
-                                                                                <path class="color-background" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z" opacity="0.596981957"></path>
-                                                                                <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
-                                                        </div>
-                                                        <div>
-                                                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center p-0">Datos del Evento</h6>
-                                                            <span class="text-sm">Fecha, Hora, Lugar, Sede y otros datos de importancia.</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="row d-lg-none">
-                                        <div class="col-md-12 g-0">
-                                            <a class="dropdown-item py-2 ps-3 border-radius-md" href="/DatosEvento">
-                                                <div class="d-flex">
-                                                    <div class="icon h-10 me-3 d-flex mt-1">
-                                                        <svg class="text-secondary" width="16px" height="16px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                            <title>settings</title>
-                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                                                    <g transform="translate(1716.000000, 291.000000)">
-                                                                        <g transform="translate(304.000000, 151.000000)">
-                                                                            <polygon class="color-background" opacity="0.596981957" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
-                                                                            <path class="color-background" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z" opacity="0.596981957"></path>
-                                                                            <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
-                                                                        </g>
-                                                                    </g>
-                                                                </g>
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center p-0">Datos del Evento</h6>
-                                                        <span class="text-sm">Fecha, Hora, Lugar, Sede y otros datos de importancia.</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://asofarma.com.mx/aviso-de-privacidad/" target="_blank" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center " aria-expanded="false" >
-                                    Farmacovigilancia
-
-                                </a>
-                            </li> -->
                         </ul>
                         <ul class="navbar-nav d-lg-block d-none">
                             <li class="nav-item">
@@ -184,7 +110,7 @@ echo $header;
                                 
                                 <!-- <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('/assets/img/curved-images/curved9.jpg')"></div>-->
                                 <video autoplay muted loop>
-                                    <source class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/curved-images/FONDOWEB-SMNP-10FEB.mp4" type="video/mp4">
+                                    <source class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" src="/assets/img/curved-images/FONDOWEB-SMNP-PADRES.mp4" type="video/mp4">
                                 </video>
 
                             </div>
@@ -197,8 +123,18 @@ echo $header;
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </section>
+
+        <div class="fixed-bottom space-wa">
+            <div class="m-5">
+                <a href="https://api.whatsapp.com/send?phone=527293787668&text=Buen%20d%C3%ADa" target="_blank">
+                    <span class="fa fa-whatsapp px-1 py-3-3 icon-wa bg-gradient-success"></span>
+                </a>
+            </div>
+        </div>
     </main>
     <!-- Modal -->
         <div class="modal" id="doc_programa" role="dialog" aria-labelledby="doc_programaLabel" aria-hidden="true" >

@@ -1,9 +1,12 @@
 <?php
 namespace App\controllers;
+require_once dirname(__DIR__) . '/../public/librerias/fpdf/fpdf.php';
 
 use \Core\View;
 use \Core\Controller;
 use \App\models\Talleres AS TalleresDao;
+use \App\models\Data AS DataDao;
+use \App\models\Register AS RegisterDao;
 
 class Talleres extends Controller{
 
@@ -222,32 +225,11 @@ html;
     }
 
     public function Video($clave){
+
         $extraHeader =<<<html
 html;
         $extraFooter =<<<html
-            <!--footer class="footer pt-0">
-                    <div class="container-fluid">
-                        <div class="row align-items-center justify-content-lg-between">
-                            <div class="col-lg-6 mb-lg-0 mb-4">
-                                <div class="copyright text-center text-sm text-muted text-lg-start">
-                                    © <script>
-                                        document.write(new Date().getFullYear())
-                                    </script>,
-                                    made with <i class="fa fa-heart"></i> by
-                                    <a href="https://www.creative-tim.com" class="font-weight-bold" target="www.grupolahe.com">Creative GRUPO LAHE</a>.
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                    <li class="nav-item">
-                                        <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">privacy policies</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </footer--    >
-                <!-- jQuery -->
+          
                     <script src="/js/jquery.min.js"></script>
                     <!--   Core JS Files   -->
                     <script src="/assets/js/core/popper.min.js"></script>
@@ -376,13 +358,13 @@ html;
                 
 html;
                 if ($curso['status'] == 2 || $porcentaje >= 80) {
-                    $btn_encuesta =<<<html
-                    <button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">
-                        Descarga tu Constancia
-                    </button>
-html;
+//                     $btn_encuesta =<<<html
+//                     <button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">
+//                         Descarga tu Constancia
+//                     </button>
+// html;
                 } else {
-                    $btn_encuesta = '';
+                    //$btn_encuesta = '';
                 }
             } else {
                 $contenido_taller .=<<<html
@@ -687,6 +669,34 @@ html;
 
             
             // var_dump($preguntas)
+            $info_user = DataDao::getInfoUserById($_SESSION['id_registrado']);
+            $transmision_1 = TalleresDao::getTransmisionById(1);
+
+            $data_1 = new \stdClass();
+            $data_1->_tipo = 1;
+            $data_1->_sala = 1;
+            $data_1->_id_tipo = $transmision_1['id_transmision'];
+
+            $chat_transmision_1 = TalleresDao::getChatByID($data_1);
+            $cont_chat_1 = '';
+
+            foreach ($chat_transmision_1 as $chat => $value) {
+                $nombre_completo = $value['nombre'] . ' ' . $value['apellidop'] . ' ' . $value['apellidom'];
+                $cont_chat_1 .= <<<html
+            <div class="d-flex mt-3">
+                <div class="flex-shrink-0">
+                    <img alt="Image placeholder" class="avatar rounded-circle" src="../../../img/users_musa/{$value['avatar_img']}">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    <h6 class="h5 mt-0">{$nombre_completo}</h6>
+                    <p class="text-sm">{$value['chat']}</p>
+                    
+                </div>
+            </div>
+html;
+            }
+
+
 
             View::set('clave',$clave);
             View::set('encuesta',$encuesta);
@@ -699,12 +709,31 @@ html;
             View::set('contenido_taller',$contenido_taller);
             View::set('progreso_curso',$progreso_curso);
             View::set('secs_totales',$secs_totales);
+            View::set('info_user',$info_user);
+            View::set('chat_transmision_1', $cont_chat_1);
+            View::set('transmision_1', $transmision_1);
             View::set('header',$this->_contenedor->header($extraHeader));
             View::set('footer',$this->_contenedor->footer($extraFooter));
             View::render("video_all");
         } else {
             View::render("404");
         }
+    }
+
+    public function getChatById()
+    {
+        $id_tipo = $_POST['id_tipo'];
+        $sala = $_POST['sala'];
+
+        $transmision = TalleresDao::getCursosById($id_tipo);
+        $data = new \stdClass();
+        $data->_tipo = 1;
+        $data->_sala = $sala;
+        $data->_id_tipo = $transmision['id_curso'];
+
+        $chat_transmision = TalleresDao::getChatByID($data);
+
+        echo json_encode($chat_transmision);
     }
 
     public function guardarRespuestas(){
@@ -769,6 +798,64 @@ html;
         }
     }
 
+    public function savePregunta()
+    {
+        $pregunta = $_POST['txt_pregunta'];
+        $salapre = $_POST['salapre'];
+        $id_tipopre = $_POST['id_tipopre'];
+
+
+
+        $data = new \stdClass();
+        $data->_id_registrado = $_SESSION['id_registrado'];
+        $data->_pregunta = $pregunta;
+        $data->_tipopre = 1;
+        $data->_id_tipopre = $id_tipopre;
+        $data->_salapre = $salapre;
+
+
+        $id = TalleresDao::insertPregunta($data);
+
+        if ($id) {
+            echo "success";
+        } else {
+            echo "fail";
+        }
+    }
+
+    public function saveChat()
+    {
+        $chat = $_POST['txt_chat'];
+        $sala = $_POST['sala'];
+        $id_tipo = $_POST['id_tipo'];
+
+        $data = new \stdClass();
+        $data->_id_registrado = $_SESSION['id_registrado'];
+        $data->_chat = $chat;
+        $data->_tipo = 1;
+        $data->_id_tipo = $id_tipo;
+        $data->_sala = $sala;
+
+
+        $id = TalleresDao::insertChat($data);
+
+        if ($id) {
+            echo "success";
+        } else {
+            echo "fail";
+        }
+    }
+
+    public function updateProgressWithDate()
+    {
+        $progreso = $_POST['segundos'];
+        $transmision = $_POST['transmision'];
+
+        TransmisionDao::updateProgresoFecha($transmision, $_SESSION['id_registrado'], $progreso);
+
+        echo $progreso . ' ID_Tr: ' . $transmision;
+    }
+
     public function uploadComprobante(){
 
         $documento = new \stdClass();
@@ -809,5 +896,53 @@ html;
     function generateRandomString($length = 10) {
         return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
     }
+
+    public function generarPDF(){
+        // $dato = $_POST['nombre'];
+
+        $datos_user = RegisterDao::getUser($this->getUsuario())[0];
+
+        $nombre = explode(" ", $datos_user['nombre']);
+        
+        $nombre_completo =$datos_user['prefijo'] ." ".$nombre[0] . " " .$datos_user['apellidop'] ;  
+        $dataclave = $this->generateRandomString();
+        $datas = 'Nombre completo';
+
+        $pdf = new \FPDF($orientation = 'L', $unit = 'mm', $format='A4');
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', 'B', 8);    //Letra Arial, negrita (Bold), tam. 20
+        $pdf->setY(1);
+        $pdf->SetFont('Arial', 'B', 16);
+        $pdf->Image('PDF/template/Asistente_2.png', 0, 0, 296, 210);
+        // $pdf->SetFont('Arial', 'B', 25);
+        // $pdf->Multicell(133, 80, $clave_ticket, 0, 'C');
+
+        //$pdf->Image('1.png', 1, 0, 190, 190);
+        $pdf->SetFont('Arial', 'B', 5);    //Letra Arial, negrita (Bold), tam. 20
+        //$nombre = utf8_decode("Jonathan Valdez Martinez");
+        //$num_linea =utf8_decode("Línea: 39");
+        //$num_linea2 =utf8_decode("Línea: 39");
+
+        $pdf->SetXY(80, 95);
+        $pdf->SetFont('Arial', 'B', 30);
+        #4D9A9B
+        $pdf->SetTextColor(0, 0, 0);
+        $pdf->Multicell(130, 10, $nombre_completo, 0, 'C');
+        $pdf->Output('D',$dataclave.'.pdf');
+
+        //$nombre_archivo = "MPDF_".uniqid().".pdf";/* se genera un nombre unico para el archivo pdf*/
+        // print_r($pdf->Output('PDF/'.$dataclave.'.pdf','F'));/* se genera el pdf en la ruta especificada*/
+
+
+        // $var = "../../PDF/template/".$dataclave.'.pdf';
+
+        // readfile($var);
+        // $data = [
+        //     'status' => 'success',
+        //     'ruta_documento' => 'PDF/'.$dataclave.'.pdf'
+        // ];
+        // echo json_encode($data);
+    }
+
 
 }
