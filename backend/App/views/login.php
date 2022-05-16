@@ -48,10 +48,10 @@ echo $header;
                                 <div class="card-header pb-0 text-start">
                                     <h5 class="font-weight-bolder text-info text-dark text-center">Taller para padres de la Sociedad Mexicana de Neurología Pediátrica 2022</h5>
                                     <div id="counter" class="group text-center mt-4">
-                                        <span><em>days</em></span> 
+                                        <!-- <span><em>days</em></span> 
                                         <span><em>hours</em></span>
                                         <span><em>minutes</em></span>
-                                        <span><em>seconds</em></span> 
+                                        <span><em>seconds</em></span>  -->
                                         <div class="row mt-4">
                                             <div class="col-3 text-lg"><h3><span id="days"></span></h3></div>
                                             <div class="col-3 text-lg"><h3><span id="hours"></span></h3></div>
