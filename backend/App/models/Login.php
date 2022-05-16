@@ -24,7 +24,7 @@ sql;
         $mysqli = Database::getInstance(true);
         $query =<<<sql
         SELECT * FROM registrados
-        WHERE email LIKE :usuario
+        WHERE email LIKE :usuario and activo = 1
 sql;
         $params = array(
             ':usuario'=> $usuario->_usuario,
