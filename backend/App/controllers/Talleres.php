@@ -714,7 +714,7 @@ html;
             View::set('transmision_1', $transmision_1);
             View::set('header',$this->_contenedor->header($extraHeader));
             View::set('footer',$this->_contenedor->footer($extraFooter));
-            // View::render("video_all");
+            View::render("video_all");
         } else {
             View::render("404");
         }
