@@ -172,7 +172,7 @@
 
 <script>
 
-    function descargarConstancia(url){
+    /*function descargarConstancia(url){
         let data = JSON.stringify([{email: "test@domain.com", name: "test"}, {email: "anothertest@example.com", name: "anothertest"}]);
 
         let type = "assets/pdf", name = "pdf-prueba.pdf";
@@ -191,6 +191,10 @@
             link.href = uri;
             link.click();
         }
+    }*/
+    function habilitarClic() {
+        var element = document.getElementById("botonDescarga");
+        element.classList.remove("disable");
     }
 
     $(document).ready(function(){
@@ -297,7 +301,7 @@
                 }
 
                 if (porcentaje_num >= 79) {
-                    $('#btn-examen').html('<button type="button" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">Descarga tu Constancia</button>');
+                    $('#btn-examen').html('<button type="button" id="botonDescarga" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">Descarga tu Constancia</button>');
                 }
 
                 $('#barra_progreso').val(inicio);
