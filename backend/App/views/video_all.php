@@ -250,7 +250,6 @@
 
 <script>
 
-<<<<<<< HEAD
     /*function descargarConstancia(url){
 =======
     intervalo1();
@@ -389,11 +388,10 @@
                 }
 
                 if (porcentaje_num >= 79) {
-<<<<<<< HEAD
+
                     $('#btn-examen').html('<button type="button" id="botonDescarga" class="btn btn-primary" style="background-color: orangered!important;" data-toggle="modal" data-target="#encuesta">Descarga tu Constancia</button>');
-=======
+
                     $('#btn-examen').html('<button type="button" class="btn btn-primary" style="background-color: orangered!important;"  onclick="descargaconstancia()" data-toggle="modal" data-target="#encuesta" >Descarga tu Constancia</button>');
->>>>>>> 9e21880bbe1b1446cc5e6f7344bca4e72cba2dc9
                 }
 
                 $('#barra_progreso').val(inicio);
