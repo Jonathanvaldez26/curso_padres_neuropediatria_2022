@@ -53,17 +53,17 @@ echo $header;
                                         <span><em>minutes</em></span>
                                         <span><em>seconds</em></span>  -->
                                         <div class="row mt-4">
-                                            <div class="col-3 text-lg"><h3><span id="days"></span></h3></div>
+                                            <!-- <div class="col-3 text-lg"><h3><span id="days"></span></h3></div>
                                             <div class="col-3 text-lg"><h3><span id="hours"></span></h3></div>
                                             <div class="col-3 text-lg"><h3><span id="minutes"></span></h3></div>
-                                            <div class="col-3 text-lg"><h3><span id="seconds"></span></h3></div>
+                                            <div class="col-3 text-lg"><h3><span id="seconds"></span></h3></div> -->
                                             <br>
                                         </div>
                                         <div class="row">
-                                            <div class="col-3">Días</div>
+                                            <!-- <div class="col-3">Días</div>
                                             <div class="col-3">Horas</div>
                                             <div class="col-3">Minutos</div>
-                                            <div class="col-3">Segundos</div>
+                                            <div class="col-3">Segundos</div> -->
                                         </div>
                                     </div>
                                     <p class="mb-0 mt-5">Introduzca el correo electrónico con el cual usted fue registrado para poder iniciar sesión</p>
